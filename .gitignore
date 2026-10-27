@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+backend/.env
+bigdata/data/raw/
+bigdata/data/cleaned/
+bigdata/data/processed/
+node_modules/
+dist/
+coverage/
+.DS_Store
+*.log

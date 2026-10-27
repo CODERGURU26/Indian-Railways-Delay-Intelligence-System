@@ -1,0 +1,65 @@
+version: '3.9'
+
+services:
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: railway-api
+    ports:
+      - "8000:8000"
+    environment:
+      APP_ENV: development
+      DATABASE_URL: sqlite:///./railway_delay.db
+    volumes:
+      - ./backend:/app
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health').read()"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: railway-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
+    environment:
+      VITE_API_BASE_URL: http://localhost:8000
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:5173"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+  spark:
+    image: bitnami/spark:3.5.1
+    container_name: railway-spark
+    environment:
+      SPARK_MODE: master
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "bash -lc 'echo \"healthy\"' >/dev/null 2>&1"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+
+  hive:
+    image: bde2020/hive:2.3.9-postgresql-metastore
+    container_name: railway-hive
+    ports:
+      - "10000:10000"
+      - "10002:10002"
+
+  hadoop:
+    image: sequenceiq/hadoop-docker:2.7.4
+    container_name: railway-hadoop
+    ports:
+      - "50070:50070"
+      - "8088:8088"
