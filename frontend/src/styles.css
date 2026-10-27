@@ -15,7 +15,7 @@ body {
 }
 
 .app-shell {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 40px 24px 80px;
 }
@@ -46,7 +46,7 @@ body {
 }
 
 .charts-grid {
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .list-grid {
@@ -60,6 +60,21 @@ body {
   border-radius: 16px;
   padding: 18px 20px;
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+}
+
+.chart-panel {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.chart-panel-wide {
+  grid-column: 1 / -1;
+}
+
+.chart-caption {
+  margin: -8px 0 16px;
+  color: #94a3b8;
+  font-size: 0.9rem;
 }
 
 .card span,
@@ -99,4 +114,14 @@ body {
   padding: 40px 20px;
   text-align: center;
   color: #f8fafc;
+}
+
+@media (max-width: 900px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-panel-wide {
+    grid-column: auto;
+  }
 }

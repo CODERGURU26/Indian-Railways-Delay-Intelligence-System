@@ -24,10 +24,9 @@ type AnalyticsPayload = {
   trains: SummaryRow[];
   stations: SummaryRow[];
   categories: SummaryRow[];
-  dates: SummaryRow[];
+  monthly_trends: SummaryRow[];
   statuses: SummaryRow[];
   routes: SummaryRow[];
-  sequence: SummaryRow[];
   coverage: Record<string, number>;
   totals: {
     records: number;
@@ -107,48 +106,57 @@ export default function App() {
       </section>
 
       <section className="charts-grid">
-        <div className="panel">
-          <h2>Top train delays</h2>
-          <ResponsiveContainer width="100%" height={260}>
-            <BarChart data={data.trains}>
+        <div className="panel chart-panel">
+          <h2>Top 10 train delays</h2>
+          <p className="chart-caption">
+            Average arrival delay · showing {Math.min(data.trains.length, 10)} unique trains
+            {data.trains.length < 8 ? ' · import more data to reach 8 trains' : ''}
+          </p>
+          <ResponsiveContainer width="100%" height={Math.max(340, data.trains.length * 38)}>
+            <BarChart data={data.trains.slice(0, 10)} layout="vertical" margin={{ left: 12, right: 24 }}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="label" />
-              <YAxis unit=" min" />
+              <XAxis type="number" unit=" min" />
+              <YAxis type="category" dataKey="label" width={76} />
               <Tooltip formatter={(value) => [`${value} min`, 'Average arrival delay']} />
-              <Bar dataKey="value" fill="#ef4444" />
+              <Bar dataKey="value" fill="#ef4444" barSize={20} />
             </BarChart>
           </ResponsiveContainer>
         </div>
 
-        <div className="panel">
-          <h2>Top station delays</h2>
-          <ResponsiveContainer width="100%" height={260}>
-            <BarChart data={data.stations}>
+        <div className="panel chart-panel">
+          <h2>Top 10 station delays</h2>
+          <p className="chart-caption">
+            Average arrival and departure delay · showing {Math.min(data.stations.length, 10)} unique stations
+            {data.stations.length < 8 ? ' · import more data to reach 8 stations' : ''}
+          </p>
+          <ResponsiveContainer width="100%" height={Math.max(340, data.stations.length * 38)}>
+            <BarChart data={data.stations.slice(0, 10)} layout="vertical" margin={{ left: 12, right: 24 }}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="label" />
-              <YAxis unit=" min" />
-              <Tooltip />
-              <Bar dataKey="value" name="Arrival" fill="#3b82f6" />
-              <Bar dataKey="departure_value" name="Departure" fill="#22c55e" />
+              <XAxis type="number" unit=" min" />
+              <YAxis type="category" dataKey="label" width={76} />
+              <Tooltip formatter={(value) => [`${value ?? 'N/A'} min`]} />
+              <Bar dataKey="value" name="Arrival" fill="#3b82f6" barSize={16} />
+              <Bar dataKey="departure_value" name="Departure" fill="#22c55e" barSize={16} />
             </BarChart>
           </ResponsiveContainer>
         </div>
 
-        <div className="panel">
-          <h2>Delay trends by date</h2>
-          <ResponsiveContainer width="100%" height={260}>
-            <LineChart data={data.dates}>
+        <div className="panel chart-panel chart-panel-wide">
+          <h2>Monthly delay trend</h2>
+          <p className="chart-caption">Average station arrival and departure delay by journey start month</p>
+          <ResponsiveContainer width="100%" height={380}>
+            <LineChart data={data.monthly_trends} margin={{ top: 12, right: 24, bottom: 8, left: 8 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="label" />
               <YAxis unit=" min" />
-              <Tooltip />
-              <Line type="monotone" dataKey="value" name="Arrival" stroke="#f97316" />
-              <Line type="monotone" dataKey="departure_value" name="Departure" stroke="#14b8a6" />
+              <Tooltip formatter={(value) => [`${value ?? 'N/A'} min`]} />
+              <Line type="monotone" dataKey="value" name="Arrival" stroke="#f97316" strokeWidth={3} />
+              <Line type="monotone" dataKey="departure_value" name="Departure" stroke="#14b8a6" strokeWidth={3} />
             </LineChart>
           </ResponsiveContainer>
         </div>
 
-        <div className="panel">
+        <div className="panel chart-panel">
           <h2>Category delay averages</h2>
           <ResponsiveContainer width="100%" height={260}>
             <BarChart data={data.categories}>
@@ -162,18 +170,6 @@ export default function App() {
           </ResponsiveContainer>
         </div>
 
-        <div className="panel">
-          <h2>Delay by stop sequence</h2>
-          <ResponsiveContainer width="100%" height={260}>
-            <LineChart data={data.sequence}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="label" label={{ value: 'Stop number', position: 'insideBottom', offset: -4 }} />
-              <YAxis unit=" min" />
-              <Tooltip />
-              <Line type="monotone" dataKey="value" name="Average arrival delay" stroke="#38bdf8" />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
       </section>
 
       <section className="list-grid">

@@ -105,27 +105,27 @@ def summarize_categories(records: Sequence[dict]) -> list[dict]:
     return sorted(results, key=lambda row: row["value"] if row["value"] is not None else float("-inf"), reverse=True)
 
 
-def summarize_date_trends(records: Sequence[dict]) -> list[dict]:
+def summarize_monthly_trends(records: Sequence[dict]) -> list[dict]:
     grouped: dict[str, dict[str, list[float]]] = defaultdict(lambda: {"arrival": [], "departure": []})
     for item in records:
         date = _label(item.get("start_date"))
-        if date is None:
+        if date is None or len(date) < 7:
             continue
+        month = date[:7]
         for field, key in (("arrival_delay_min", "arrival"), ("departure_delay_min", "departure")):
             delay = _safe_float(item.get(field))
             if delay is not None:
-                grouped[date][key].append(delay)
+                grouped[month][key].append(delay)
 
     return [
         {
-            "label": date,
+            "label": month,
             "value": round(sum(delays["arrival"]) / len(delays["arrival"]), 2) if delays["arrival"] else None,
-            "departure_value": round(sum(delays["departure"]) / len(delays["departure"]), 2)
-            if delays["departure"] else None,
+            "departure_value": round(sum(delays["departure"]) / len(delays["departure"]), 2) if delays["departure"] else None,
             "count": len(delays["arrival"]) if delays["arrival"] else len(delays["departure"]),
             "departure_count": len(delays["departure"]),
         }
-        for date, delays in sorted(grouped.items())
+        for month, delays in sorted(grouped.items())
     ]
 
 
@@ -141,9 +141,8 @@ def summarize_status(records: Sequence[dict]) -> list[dict]:
     ]
 
 
-def summarize_routes(records: Sequence[dict]) -> tuple[list[dict], list[dict]]:
+def summarize_routes(records: Sequence[dict]) -> list[dict]:
     journeys: dict[tuple[str, str], list[tuple[int, str, float | None]]] = defaultdict(list)
-    sequence_delays: dict[int, list[float]] = defaultdict(list)
     for item in records:
         station = _label(item.get("station_code"))
         sequence = item.get("seq")
@@ -155,8 +154,6 @@ def summarize_routes(records: Sequence[dict]) -> tuple[list[dict], list[dict]]:
             continue
         delay = _safe_float(item.get("arrival_delay_min"))
         journeys[_journey_key(item)].append((sequence_number, station, delay))
-        if delay is not None:
-            sequence_delays[sequence_number].append(delay)
 
     route_groups: dict[str, list[float]] = defaultdict(list)
     route_counts: dict[str, int] = defaultdict(int)
@@ -179,15 +176,7 @@ def summarize_routes(records: Sequence[dict]) -> tuple[list[dict], list[dict]]:
         for route, delays in route_groups.items()
     ]
     routes.sort(key=lambda row: row["value"] if row["value"] is not None else float("-inf"), reverse=True)
-    sequence = [
-        {
-            "label": str(position),
-            "value": round(sum(delays) / len(delays), 2),
-            "count": len(delays),
-        }
-        for position, delays in sorted(sequence_delays.items())
-    ]
-    return routes[:10], sequence
+    return routes[:10]
 
 
 def summarize_coverage(records: Sequence[dict]) -> dict[str, float]:
@@ -221,15 +210,14 @@ def summarize_coverage(records: Sequence[dict]) -> dict[str, float]:
 
 def build_analytics_payload(records: Iterable[dict]) -> dict:
     rows = list(records)
-    routes, sequence = summarize_routes(rows)
+    routes = summarize_routes(rows)
     return {
         "trains": summarize_train_delays(rows),
         "stations": summarize_station_delays(rows),
         "categories": summarize_categories(rows),
-        "dates": summarize_date_trends(rows),
+        "monthly_trends": summarize_monthly_trends(rows),
         "statuses": summarize_status(rows),
         "routes": routes,
-        "sequence": sequence,
         "coverage": summarize_coverage(rows),
         "totals": {
             "records": len(rows),
