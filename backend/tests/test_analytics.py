@@ -3,11 +3,11 @@ from app.services.analytics import build_analytics_payload
 
 def test_build_analytics_payload_shapes():
     records = [
-        {"train_number": "12952", "arrival_delay_min": 45, "station_code": "NDLS", "category": "MEX", "arrival_reported": False, "run_quality": 0.5},
-        {"train_number": "12952", "arrival_delay_min": 25, "station_code": "BCT", "category": "MEX", "arrival_reported": True, "run_quality": 0.8},
-        {"train_number": "22901", "arrival_delay_min": 20, "station_code": "NDLS", "category": "RAJ", "arrival_reported": True, "run_quality": 0.9},
-        {"train_number": "22901", "arrival_delay_min": 40, "station_code": "AGC", "category": "RAJ", "arrival_reported": False, "run_quality": 0.8},
-        {"train_number": "12010", "arrival_delay_min": 15, "station_code": "BPL", "category": "EXP", "arrival_reported": True, "run_quality": 0.7},
+        {"train_number": "12952", "start_date": "2026-10-08", "status": "completed", "seq": 1, "arrival_delay_min": 45, "departure_delay_min": 46, "station_code": "NDLS", "category": "MEX", "arrival_reported": False, "departure_reported": True, "run_quality": 0.5},
+        {"train_number": "12952", "start_date": "2026-10-08", "status": "completed", "seq": 2, "arrival_delay_min": 25, "departure_delay_min": 26, "station_code": "BCT", "category": "MEX", "arrival_reported": True, "departure_reported": True, "run_quality": 0.8},
+        {"train_number": "22901", "start_date": "2026-10-08", "status": "completed", "seq": 1, "arrival_delay_min": 20, "departure_delay_min": 21, "station_code": "NDLS", "category": "RAJ", "arrival_reported": True, "departure_reported": True, "run_quality": 0.9},
+        {"train_number": "22901", "start_date": "2026-10-08", "status": "completed", "seq": 2, "arrival_delay_min": 40, "departure_delay_min": 41, "station_code": "AGC", "category": "RAJ", "arrival_reported": False, "departure_reported": False, "run_quality": 0.8},
+        {"train_number": "12010", "start_date": "2026-10-09", "status": "cancelled", "seq": 1, "arrival_delay_min": 15, "departure_delay_min": 16, "station_code": "BPL", "category": "EXP", "arrival_reported": True, "departure_reported": True, "run_quality": 0.7},
     ]
 
     payload = build_analytics_payload(records)
@@ -15,10 +15,20 @@ def test_build_analytics_payload_shapes():
     assert "trains" in payload
     assert "stations" in payload
     assert "categories" in payload
+    assert "dates" in payload
+    assert "statuses" in payload
+    assert "routes" in payload
+    assert "sequence" in payload
     assert "coverage" in payload
     assert payload["trains"][0]["label"] == "12952"
     assert payload["coverage"]["reported"] > 0
     assert payload["coverage"]["estimated"] > 0
+    assert payload["totals"]["trains"] == 3
+    assert payload["totals"]["stations"] == 4
+    assert payload["dates"][0]["label"] == "2026-10-08"
+    assert payload["routes"][0]["label"] == "NDLS → BCT"
+    assert payload["sequence"][0]["label"] == "1"
+    assert payload["statuses"][0]["label"] == "completed"
 
 
 def test_missing_delay_is_ignored():
@@ -29,3 +39,26 @@ def test_missing_delay_is_ignored():
 
     payload = build_analytics_payload(records)
     assert payload["trains"][0]["value"] == 10.0
+
+
+def test_train_average_weights_journeys_equally():
+    records = [
+        {"train_number": "100", "start_date": "2026-10-01", "arrival_delay_min": 0},
+        {"train_number": "100", "start_date": "2026-10-01", "arrival_delay_min": 0},
+        {"train_number": "100", "start_date": "2026-10-02", "arrival_delay_min": 60},
+    ]
+
+    payload = build_analytics_payload(records)
+    assert payload["trains"] == [{"label": "100", "value": 30.0, "count": 2}]
+
+
+def test_missing_reporting_flags_are_excluded_from_coverage_denominator():
+    records = [
+        {"arrival_reported": True, "departure_reported": False, "run_quality": 0.8},
+        {"arrival_reported": None, "departure_reported": None},
+    ]
+
+    coverage = build_analytics_payload(records)["coverage"]
+    assert coverage["reported"] == 100
+    assert coverage["estimated"] == 0
+    assert coverage["departure_reported_pct"] == 0
