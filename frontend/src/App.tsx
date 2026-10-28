@@ -59,6 +59,23 @@ type AnalyticsPayload = {
   data_source: string;
 };
 
+type StationInfo = {
+  code: string;
+  name: string | null;
+  region: string | null;
+  stop_records: number;
+  arrival_observations: number;
+  avg_arrival_delay_min: number | null;
+};
+
+type StationDirectory = {
+  stations: StationInfo[];
+  total: number;
+  mapped: number;
+  unmapped: number;
+  mapping_source: string;
+};
+
 const STATUS_COLORS = ['#22c55e', '#f59e0b', '#ef4444', '#3b82f6', '#a78bfa', '#14b8a6'];
 const DELAY_COLORS: Record<string, string> = {
   'Early or on time': '#22c55e',
@@ -72,16 +89,26 @@ const number = (value: number | null | undefined, digits = 2) =>
 
 export default function App() {
   const [data, setData] = useState<AnalyticsPayload | null>(null);
+  const [stationDirectory, setStationDirectory] = useState<StationDirectory | null>(null);
+  const [stationQuery, setStationQuery] = useState('');
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchSummary = async () => {
       try {
-        const response = await fetch(`${API_URL}/summary`);
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
+        const [summaryResponse, stationResponse] = await Promise.all([
+          fetch(`${API_URL}/summary`),
+          fetch(`${API_URL}/stations`),
+        ]);
+        if (!summaryResponse.ok || !stationResponse.ok) {
+          throw new Error(`Analytics HTTP ${summaryResponse.status}; stations HTTP ${stationResponse.status}`);
         }
-        setData(await response.json());
+        const [summary, directory] = await Promise.all([
+          summaryResponse.json(),
+          stationResponse.json(),
+        ]);
+        setData(summary);
+        setStationDirectory(directory);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Unable to load dashboard data');
       }
@@ -89,6 +116,15 @@ export default function App() {
 
     fetchSummary();
   }, []);
+
+  const filteredStations = (stationDirectory?.stations ?? [])
+    .filter((station) => {
+      const query = stationQuery.trim().toLocaleUpperCase();
+      return !query
+        || station.code.toLocaleUpperCase().includes(query)
+        || station.name?.toLocaleUpperCase().includes(query);
+    })
+    .slice(0, 12);
 
   if (error) {
     return <div className="error">Unable to fetch analytics: {error}</div>;
@@ -278,6 +314,47 @@ export default function App() {
               <li key={item.label}><span>{item.label}<small>{item.count?.toLocaleString()} journeys</small></span><strong>{number(item.value)} min</strong></li>
             ))}
           </ul>
+        </div>
+
+        <div className="panel station-directory-panel">
+          <h2>Station code directory</h2>
+          <p className="chart-caption">
+            Search station codes to see their full station names. Matched {stationDirectory?.mapped.toLocaleString()} of {stationDirectory?.total.toLocaleString()} dataset stations.
+          </p>
+          <label className="station-search-label" htmlFor="station-search">Search by station code or name</label>
+          <input
+            id="station-search"
+            className="station-search"
+            type="search"
+            value={stationQuery}
+            onChange={(event) => setStationQuery(event.target.value)}
+            placeholder="e.g. NDLS or New Delhi"
+          />
+          <ul className="station-results">
+            {filteredStations.map((station) => (
+              <li key={station.code}>
+                <span>
+                  <strong className="station-code">{station.code}</strong>
+                  {station.name ?? 'Station name not found in reference'}
+                  <small>
+                    {station.region ? `Region ${station.region} · ` : ''}
+                    {station.stop_records.toLocaleString()} stop records
+                  </small>
+                </span>
+                <strong>
+                  {station.avg_arrival_delay_min == null
+                    ? 'N/A'
+                    : `${number(station.avg_arrival_delay_min)} min`}
+                </strong>
+              </li>
+            ))}
+            {filteredStations.length === 0 && (
+              <li><span>No station codes or names match this search.</span></li>
+            )}
+          </ul>
+          <p className="chart-caption station-source">
+            Name reference: {stationDirectory?.mapping_source}. Some dataset codes may not appear in the reference.
+          </p>
         </div>
       </section>
     </div>

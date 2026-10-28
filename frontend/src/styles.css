@@ -107,6 +107,50 @@ body {
   font-size: 1.2rem;
 }
 
+.station-directory-panel {
+  min-width: 0;
+}
+
+.station-search-label {
+  display: block;
+  margin-bottom: 6px;
+  color: #cbd5e1;
+  font-size: 0.85rem;
+}
+
+.station-search {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  color: #f8fafc;
+  background: #111827;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 8px;
+  font: inherit;
+}
+
+.station-search:focus {
+  outline: 2px solid #38bdf8;
+  outline-offset: 1px;
+}
+
+.station-results {
+  max-height: 440px;
+  overflow: auto;
+}
+
+.station-results .station-code {
+  display: inline-block;
+  min-width: 54px;
+  margin: 0 8px 0 0;
+  color: #38bdf8;
+  font-size: 0.9rem;
+}
+
+.station-source {
+  margin: 12px 0 0;
+}
+
 .panel ul {
   list-style: none;
   margin: 0;
