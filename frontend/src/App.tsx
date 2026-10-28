@@ -61,7 +61,9 @@ type StationInfo = {
   region: string | null;
   stop_records: number;
   arrival_observations: number;
+  departure_observations: number;
   avg_arrival_delay_min: number | null;
+  avg_departure_delay_min: number | null;
 };
 
 type StationDirectory = {
@@ -86,6 +88,7 @@ export default function App() {
   const [data, setData] = useState<AnalyticsPayload | null>(null);
   const [stationDirectory, setStationDirectory] = useState<StationDirectory | null>(null);
   const [stationQuery, setStationQuery] = useState('');
+  const [selectedStationCode, setSelectedStationCode] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -120,6 +123,9 @@ export default function App() {
         || station.name?.toLocaleUpperCase().includes(query);
     })
     .slice(0, 12);
+  const selectedStation = stationDirectory?.stations.find(
+    (station) => station.code === selectedStationCode,
+  ) ?? null;
 
   if (error) {
     return <div className="error">Unable to fetch analytics: {error}</div>;
@@ -140,6 +146,80 @@ export default function App() {
           Extreme delay values are not clipped.
         </p>
       </header>
+
+      <section className="panel station-directory-panel station-directory-top">
+        <div className="station-directory-heading">
+          <div>
+            <span className="section-eyebrow">Explore station performance</span>
+            <h2>Station code directory</h2>
+            <p className="chart-caption">
+              Search for a station and select it to see its full name and one-year delay averages.
+              Matched {stationDirectory?.mapped.toLocaleString()} of {stationDirectory?.total.toLocaleString()} dataset stations.
+            </p>
+          </div>
+          <span className="station-directory-count">{stationDirectory?.total.toLocaleString()} stations</span>
+        </div>
+        <label className="station-search-label" htmlFor="station-search">Search by station code or name</label>
+        <input
+          id="station-search"
+          className="station-search"
+          type="search"
+          value={stationQuery}
+          onChange={(event) => {
+            setStationQuery(event.target.value);
+            setSelectedStationCode(null);
+          }}
+          placeholder="e.g. NDLS or New Delhi"
+        />
+        <ul className="station-results">
+          {filteredStations.map((station) => (
+            <li key={station.code}>
+              <button
+                type="button"
+                className={`station-result${station.code === selectedStationCode ? ' station-result-selected' : ''}`}
+                onClick={() => setSelectedStationCode(station.code)}
+                aria-pressed={station.code === selectedStationCode}
+              >
+                <span className="station-result-code">{station.code}</span>
+                <span className="station-result-name">{station.name ?? 'Station name not found in reference'}</span>
+                <span className="station-result-delay">
+                  {station.avg_arrival_delay_min == null ? 'N/A' : `${number(station.avg_arrival_delay_min)} min`}
+                  <small>avg arrival</small>
+                </span>
+              </button>
+            </li>
+          ))}
+          {filteredStations.length === 0 && (
+            <li><span className="station-empty">No station codes or names match this search.</span></li>
+          )}
+        </ul>
+        {selectedStation && (
+          <div className="station-detail" aria-live="polite">
+            <div className="station-detail-heading">
+              <span className="station-detail-code">{selectedStation.code}</span>
+              <div>
+                <h3>{selectedStation.name ?? 'Station name unavailable'}</h3>
+                <p>{selectedStation.region ? `Region ${selectedStation.region} · ` : ''}{selectedStation.stop_records.toLocaleString()} stop records in the year</p>
+              </div>
+            </div>
+            <div className="station-detail-metrics">
+              <div>
+                <span>Average arrival delay</span>
+                <strong>{selectedStation.avg_arrival_delay_min == null ? 'N/A' : `${number(selectedStation.avg_arrival_delay_min)} min`}</strong>
+                <small>{selectedStation.arrival_observations.toLocaleString()} recorded arrivals</small>
+              </div>
+              <div>
+                <span>Average departure delay</span>
+                <strong>{selectedStation.avg_departure_delay_min == null ? 'N/A' : `${number(selectedStation.avg_departure_delay_min)} min`}</strong>
+                <small>{selectedStation.departure_observations.toLocaleString()} recorded departures</small>
+              </div>
+            </div>
+          </div>
+        )}
+        <p className="chart-caption station-source">
+          Name reference: {stationDirectory?.mapping_source}. Unmatched codes are identified rather than guessed.
+        </p>
+      </section>
 
       <section className="stats-grid">
         <div className="card"><span>Stop records</span><strong>{data.totals.records.toLocaleString()}</strong></div>
@@ -294,46 +374,6 @@ export default function App() {
           </ul>
         </div>
 
-        <div className="panel station-directory-panel">
-          <h2>Station code directory</h2>
-          <p className="chart-caption">
-            Search station codes to see their full station names. Matched {stationDirectory?.mapped.toLocaleString()} of {stationDirectory?.total.toLocaleString()} dataset stations.
-          </p>
-          <label className="station-search-label" htmlFor="station-search">Search by station code or name</label>
-          <input
-            id="station-search"
-            className="station-search"
-            type="search"
-            value={stationQuery}
-            onChange={(event) => setStationQuery(event.target.value)}
-            placeholder="e.g. NDLS or New Delhi"
-          />
-          <ul className="station-results">
-            {filteredStations.map((station) => (
-              <li key={station.code}>
-                <span>
-                  <strong className="station-code">{station.code}</strong>
-                  {station.name ?? 'Station name not found in reference'}
-                  <small>
-                    {station.region ? `Region ${station.region} · ` : ''}
-                    {station.stop_records.toLocaleString()} stop records
-                  </small>
-                </span>
-                <strong>
-                  {station.avg_arrival_delay_min == null
-                    ? 'N/A'
-                    : `${number(station.avg_arrival_delay_min)} min`}
-                </strong>
-              </li>
-            ))}
-            {filteredStations.length === 0 && (
-              <li><span>No station codes or names match this search.</span></li>
-            )}
-          </ul>
-          <p className="chart-caption station-source">
-            Name reference: {stationDirectory?.mapping_source}. Some dataset codes may not appear in the reference.
-          </p>
-        </div>
       </section>
     </div>
   );

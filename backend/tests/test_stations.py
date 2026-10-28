@@ -17,14 +17,15 @@ def test_station_directory_joins_names_and_keeps_unmapped_codes(tmp_path):
         connection.execute("""
             CREATE TABLE test_records (
                 station_code VARCHAR,
-                arrival_delay_min DOUBLE
+                arrival_delay_min DOUBLE,
+                departure_delay_min DOUBLE
             )
         """)
         connection.execute("""
             INSERT INTO test_records VALUES
-                ('AAA', 10),
-                ('AAA', 20),
-                ('BBB', 5)
+                ('AAA', 10, 4),
+                ('AAA', 20, 8),
+                ('BBB', 5, NULL)
         """)
         connection.execute(f"COPY test_records TO '{parquet_file}' (FORMAT PARQUET)")
     finally:
@@ -42,7 +43,9 @@ def test_station_directory_joins_names_and_keeps_unmapped_codes(tmp_path):
             "region": "NR",
             "stop_records": 2,
             "arrival_observations": 2,
+            "departure_observations": 2,
             "avg_arrival_delay_min": 15.0,
+            "avg_departure_delay_min": 6.0,
         },
         {
             "code": "BBB",
@@ -50,6 +53,8 @@ def test_station_directory_joins_names_and_keeps_unmapped_codes(tmp_path):
             "region": None,
             "stop_records": 1,
             "arrival_observations": 1,
+            "departure_observations": 0,
             "avg_arrival_delay_min": 5.0,
+            "avg_departure_delay_min": None,
         },
     ]

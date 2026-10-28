@@ -41,7 +41,9 @@ def load_station_directory(
             SELECT station_code,
                    count(*) AS stop_records,
                    count(arrival_delay_min) AS arrival_observations,
-                   round(avg(arrival_delay_min), 2) AS avg_arrival_delay_min
+                   count(departure_delay_min) AS departure_observations,
+                   round(avg(arrival_delay_min), 2) AS avg_arrival_delay_min,
+                   round(avg(departure_delay_min), 2) AS avg_departure_delay_min
             FROM read_parquet('{quoted_path}')
             WHERE station_code IS NOT NULL
             GROUP BY station_code
@@ -51,7 +53,7 @@ def load_station_directory(
         connection.close()
 
     stations = []
-    for code, stop_records, arrival_observations, avg_delay in rows:
+    for code, stop_records, arrival_observations, departure_observations, avg_arrival, avg_departure in rows:
         reference = station_names.get(code)
         stations.append({
             "code": code,
@@ -59,7 +61,9 @@ def load_station_directory(
             "region": reference["region"] if reference else None,
             "stop_records": stop_records,
             "arrival_observations": arrival_observations,
-            "avg_arrival_delay_min": float(avg_delay) if avg_delay is not None else None,
+            "departure_observations": departure_observations,
+            "avg_arrival_delay_min": float(avg_arrival) if avg_arrival is not None else None,
+            "avg_departure_delay_min": float(avg_departure) if avg_departure is not None else None,
         })
 
     mapped_count = sum(station["name"] is not None for station in stations)
