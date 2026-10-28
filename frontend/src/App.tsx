@@ -17,6 +17,8 @@ const API_URL = (import.meta as ImportMeta & { env?: { VITE_API_BASE_URL?: strin
 
 type SummaryRow = {
   label: string;
+  name?: string | null;
+  display_label?: string;
   value: number | null;
   departure_value?: number | null;
   count?: number;
@@ -239,7 +241,7 @@ export default function App() {
             <BarChart data={data.trains} layout="vertical" margin={{ left: 12, right: 24 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis type="number" unit=" min" />
-              <YAxis type="category" dataKey="label" width={76} />
+              <YAxis type="category" dataKey="display_label" width={190} tick={{ fontSize: 10 }} />
               <Tooltip formatter={(value) => [`${number(Number(value))} min`, 'Mean arrival delay']} />
               <Bar dataKey="value" fill="#ef4444" barSize={20} />
             </BarChart>

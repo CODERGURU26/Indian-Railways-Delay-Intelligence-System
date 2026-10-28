@@ -66,11 +66,31 @@ def load_dataset_analytics(data_path: str = str(DATA_PATH)) -> dict:
                 WHERE arrival_delay_min IS NOT NULL AND train_number IS NOT NULL
                   AND start_date BETWEEN DATE '2025-02-08' AND DATE '2026-02-07'
                 GROUP BY train_number, start_date
+            ),
+            train_names AS (
+                SELECT train_number, train_name
+                FROM (
+                    SELECT train_number, NULLIF(trim(train_name), '') AS train_name,
+                           row_number() OVER (
+                               PARTITION BY train_number
+                               ORDER BY count(*) DESC, NULLIF(trim(train_name), '')
+                           ) AS name_rank
+                    FROM records
+                    WHERE train_number IS NOT NULL AND NULLIF(trim(train_name), '') IS NOT NULL
+                      AND start_date BETWEEN DATE '2025-02-08' AND DATE '2026-02-07'
+                    GROUP BY train_number, NULLIF(trim(train_name), '')
+                )
+                WHERE name_rank = 1
             )
-            SELECT train_number AS label, round(avg(journey_delay), 2) AS value,
+            SELECT journey.train_number AS label,
+                   train_names.train_name AS name,
+                   journey.train_number || ' · ' ||
+                       coalesce(train_names.train_name, 'Name unavailable') AS display_label,
+                   round(avg(journey.journey_delay), 2) AS value,
                    count(*) AS count
             FROM journey
-            GROUP BY train_number
+            LEFT JOIN train_names ON journey.train_number = train_names.train_number
+            GROUP BY journey.train_number, train_names.train_name
             HAVING count(*) >= 10
             ORDER BY value DESC
             LIMIT 10
