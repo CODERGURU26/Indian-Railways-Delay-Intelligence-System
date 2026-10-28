@@ -7,8 +7,6 @@ import {
   Legend,
   Line,
   LineChart,
-  Pie,
-  PieChart,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -31,7 +29,6 @@ type AnalyticsPayload = {
   stations: SummaryRow[];
   categories: SummaryRow[];
   monthly_trends: SummaryRow[];
-  statuses: SummaryRow[];
   routes: SummaryRow[];
   sequence: SummaryRow[];
   delay_distribution: SummaryRow[];
@@ -44,7 +41,6 @@ type AnalyticsPayload = {
     mean_arrival_delay_min: number | null;
     mean_departure_delay_min: number | null;
     severe_arrival_pct: number;
-    cancelled_journeys_pct: number;
   };
   insights: { title: string; value: string; detail: string }[];
   quality: Record<string, string | number | null>;
@@ -76,7 +72,6 @@ type StationDirectory = {
   mapping_source: string;
 };
 
-const STATUS_COLORS = ['#22c55e', '#f59e0b', '#ef4444', '#3b82f6', '#a78bfa', '#14b8a6'];
 const DELAY_COLORS: Record<string, string> = {
   'Early or on time': '#22c55e',
   '1-15 min': '#38bdf8',
@@ -154,7 +149,6 @@ export default function App() {
         <div className="card"><span>Mean arrival delay / journey</span><strong>{number(data.kpis.mean_arrival_delay_min)} min</strong></div>
         <div className="card"><span>Mean departure delay / journey</span><strong>{number(data.kpis.mean_departure_delay_min)} min</strong></div>
         <div className="card"><span>Arrivals over 60 min late</span><strong>{number(data.kpis.severe_arrival_pct)}%</strong></div>
-        <div className="card"><span>Cancelled journeys</span><strong>{number(data.kpis.cancelled_journeys_pct)}%</strong></div>
       </section>
 
       <section className="charts-grid">
@@ -238,22 +232,6 @@ export default function App() {
                 ))}
               </Bar>
             </BarChart>
-          </ResponsiveContainer>
-        </div>
-
-        <div className="panel chart-panel">
-          <h2>Journey service status</h2>
-          <p className="chart-caption">Distinct train journeys by source status</p>
-          <ResponsiveContainer width="100%" height={320}>
-            <PieChart>
-              <Pie data={data.statuses} dataKey="count" nameKey="label" outerRadius={105} label>
-                {data.statuses.map((item, index) => (
-                  <Cell key={item.label} fill={STATUS_COLORS[index % STATUS_COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip formatter={(value) => [Number(value).toLocaleString(), 'Journeys']} />
-              <Legend />
-            </PieChart>
           </ResponsiveContainer>
         </div>
 
