@@ -6,7 +6,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
 
 ROOT = Path(__file__).resolve().parents[1]
-RAW_PATH = ROOT / "data" / "sample"
+RAW_PATH = ROOT / "data" / "raw" / "2026-10-10_"
 OUTPUT_PATH = ROOT / "data" / "processed" / "spark_outputs"
 
 

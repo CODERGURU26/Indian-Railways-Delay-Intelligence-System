@@ -13,4 +13,8 @@ def test_dataset_manifest_structure():
     assert "dataset" in payload
     assert "config" in payload
     assert "retrieved_at" in payload
-    assert "file" in payload
+    assert payload["split"] == "train"
+    assert payload["row_count"] == payload["expected_row_count"]
+    assert payload["row_count"] == sum(item["rows"] for item in payload["files"])
+    assert payload["shard_count"] == len(payload["files"])
+    assert all(len(item["sha256"]) == 64 for item in payload["files"])

@@ -5,10 +5,13 @@ import {
   CartesianGrid,
   Line,
   LineChart,
+  Pie,
+  PieChart,
   ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
+  Cell,
 } from 'recharts';
 
 const API_URL = (import.meta as ImportMeta & { env?: { VITE_API_BASE_URL?: string } }).env?.VITE_API_BASE_URL || 'http://localhost:8000';
@@ -27,6 +30,7 @@ type AnalyticsPayload = {
   monthly_trends: SummaryRow[];
   statuses: SummaryRow[];
   routes: SummaryRow[];
+  sequence: SummaryRow[];
   coverage: Record<string, number>;
   totals: {
     records: number;
@@ -72,6 +76,9 @@ export default function App() {
         <h1>Indian Railways Delay Intelligence</h1>
         <p>Station-level delay and route quality monitoring.</p>
         <p className="data-source">Data source: {data.data_source}</p>
+        <p className="chart-caption">
+          Delay averages use the source values as recorded; extreme delays are not clipped or excluded.
+        </p>
       </header>
 
       <section className="stats-grid">
@@ -170,6 +177,34 @@ export default function App() {
           </ResponsiveContainer>
         </div>
 
+        <div className="panel chart-panel">
+          <h2>Service status by journey</h2>
+          <p className="chart-caption">Distinct train journeys grouped by source status</p>
+          <ResponsiveContainer width="100%" height={280}>
+            <PieChart>
+              <Pie data={data.statuses} dataKey="count" nameKey="label" outerRadius={95} label>
+                {data.statuses.map((item, index) => (
+                  <Cell key={item.label} fill={['#22c55e', '#f59e0b', '#ef4444', '#3b82f6', '#a78bfa'][index % 5]} />
+                ))}
+              </Pie>
+              <Tooltip formatter={(value) => [Number(value).toLocaleString(), 'Journeys']} />
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
+
+        <div className="panel chart-panel chart-panel-wide">
+          <h2>Arrival delay by stop sequence</h2>
+          <p className="chart-caption">Average recorded arrival delay at each stop number across all journeys</p>
+          <ResponsiveContainer width="100%" height={320}>
+            <LineChart data={data.sequence} margin={{ top: 12, right: 24, bottom: 8, left: 8 }}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="label" label={{ value: 'Stop sequence', position: 'insideBottom', offset: -4 }} />
+              <YAxis unit=" min" />
+              <Tooltip formatter={(value) => [`${value ?? 'N/A'} min`, 'Average arrival delay']} />
+              <Line type="monotone" dataKey="value" name="Arrival delay" stroke="#38bdf8" strokeWidth={3} dot={false} />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
       </section>
 
       <section className="list-grid">
