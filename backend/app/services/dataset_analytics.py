@@ -82,14 +82,13 @@ def load_dataset_analytics(data_path: str = str(DATA_PATH)) -> dict:
                 )
                 WHERE name_rank = 1
             )
-            SELECT journey.train_number AS label,
+            SELECT train_names.train_name AS label,
+                   journey.train_number AS train_number,
                    train_names.train_name AS name,
-                   journey.train_number || ' · ' ||
-                       coalesce(train_names.train_name, 'Name unavailable') AS display_label,
                    round(avg(journey.journey_delay), 2) AS value,
                    count(*) AS count
             FROM journey
-            LEFT JOIN train_names ON journey.train_number = train_names.train_number
+            JOIN train_names ON journey.train_number = train_names.train_number
             GROUP BY journey.train_number, train_names.train_name
             HAVING count(*) >= 10
             ORDER BY value DESC

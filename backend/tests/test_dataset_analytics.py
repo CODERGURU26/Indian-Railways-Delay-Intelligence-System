@@ -38,7 +38,17 @@ def test_dataset_analytics_aggregates_all_parquet_rows(tmp_path):
                 ('100', 'EXPRESS ONE', '2025-03-06', 'completed', 1, 'AAA', 'EXP', 10, 15, true, true, 0.8, '2025-03', '1-15 min', '1-15 min'),
                 ('100', 'EXPRESS ONE', '2025-03-07', 'completed', 1, 'AAA', 'EXP', 10, 15, true, true, 0.8, '2025-03', '1-15 min', '1-15 min'),
                 ('100', 'EXPRESS ONE', '2025-03-08', 'completed', 1, 'AAA', 'EXP', 10, 15, true, true, 0.8, '2025-03', '1-15 min', '1-15 min'),
-                ('100', 'EXPRESS ONE', '2025-03-09', 'completed', 1, 'AAA', 'EXP', 10, 15, true, true, 0.8, '2025-03', '1-15 min', '1-15 min')
+                ('100', 'EXPRESS ONE', '2025-03-09', 'completed', 1, 'AAA', 'EXP', 10, 15, true, true, 0.8, '2025-03', '1-15 min', '1-15 min'),
+                ('200', '', '2025-03-10', 'completed', 1, 'AAA', 'EXP', 30, 30, true, true, 0.8, '2025-03', '16-60 min', '16-60 min'),
+                ('200', '', '2025-03-11', 'completed', 1, 'AAA', 'EXP', 30, 30, true, true, 0.8, '2025-03', '16-60 min', '16-60 min'),
+                ('200', '', '2025-03-12', 'completed', 1, 'AAA', 'EXP', 30, 30, true, true, 0.8, '2025-03', '16-60 min', '16-60 min'),
+                ('200', '', '2025-03-13', 'completed', 1, 'AAA', 'EXP', 30, 30, true, true, 0.8, '2025-03', '16-60 min', '16-60 min'),
+                ('200', '', '2025-03-14', 'completed', 1, 'AAA', 'EXP', 30, 30, true, true, 0.8, '2025-03', '16-60 min', '16-60 min'),
+                ('200', '', '2025-03-15', 'completed', 1, 'AAA', 'EXP', 30, 30, true, true, 0.8, '2025-03', '16-60 min', '16-60 min'),
+                ('200', '', '2025-03-16', 'completed', 1, 'AAA', 'EXP', 30, 30, true, true, 0.8, '2025-03', '16-60 min', '16-60 min'),
+                ('200', '', '2025-03-17', 'completed', 1, 'AAA', 'EXP', 30, 30, true, true, 0.8, '2025-03', '16-60 min', '16-60 min'),
+                ('200', '', '2025-03-18', 'completed', 1, 'AAA', 'EXP', 30, 30, true, true, 0.8, '2025-03', '16-60 min', '16-60 min'),
+                ('200', '', '2025-03-19', 'completed', 1, 'AAA', 'EXP', 30, 30, true, true, 0.8, '2025-03', '16-60 min', '16-60 min')
         """)
         connection.execute(f"COPY test_records TO '{parquet_file}' (FORMAT PARQUET)")
     finally:
@@ -47,29 +57,29 @@ def test_dataset_analytics_aggregates_all_parquet_rows(tmp_path):
     payload = load_dataset_analytics(str(tmp_path))
 
     assert payload["totals"] == {
-        "records": 11,
-        "trains": 1,
+        "records": 21,
+        "trains": 2,
         "stations": 2,
-        "journeys": 10,
+        "journeys": 20,
         "start_date": "2025-03-01",
         "end_date": "2025-04-02",
     }
     assert payload["trains"] == [{
-        "label": "100",
+        "label": "EXPRESS ONE",
+        "train_number": "100",
         "name": "EXPRESS ONE",
-        "display_label": "100 · EXPRESS ONE",
         "value": 14.5,
         "count": 10,
     }]
     assert payload["monthly_trends"] == [
-        {"label": "2025-03", "value": 9.44, "departure_value": 14.44, "count": 9, "departure_count": 9},
+        {"label": "2025-03", "value": 20.26, "departure_value": 22.63, "count": 19, "departure_count": 19},
         {"label": "2025-04", "value": 60.0, "departure_value": 65.0, "count": 1, "departure_count": 1},
     ]
     assert {row["label"]: row["count"] for row in payload["statuses"]} == {
-        "completed": 9,
+        "completed": 19,
         "cancelled": 1,
     }
     assert payload["sequence"] == [
-        {"label": "1", "value": 14.0, "count": 10},
+        {"label": "1", "value": 22.0, "count": 20},
         {"label": "2", "value": 10.0, "count": 1},
     ]
