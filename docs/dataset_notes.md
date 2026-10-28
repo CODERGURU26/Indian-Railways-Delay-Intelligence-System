@@ -26,16 +26,16 @@ Key schema fields:
 
 Important interpretation notes:
 
-- The `2026-10-10_` config is the preferred working config because it includes the `arrival_reported`, `departure_reported`, and `run_quality` fields. Hugging Face reports 2,805,574 rows in its `train` split (rounded to 2.81M on the dataset card).
+- The dashboard uses `2025-02-08_2026-02-07`, a historical config with 17,522,150 rows and source dates spanning 2025-02-08 through 2026-02-07. Hugging Face also provides `2026-10-10_` (2,805,574 rows) as a separate current-data config.
 - Missing actual times are not treated as zero delay.
 - Estimated timestamps are stored separately from reported values.
 - Station-level delay is distinct from destination punctuality, and the analytics service keeps those concepts separate.
 
-Run `python bigdata/ingestion/download_dataset.py --config 2026-10-10_` from the project root to fetch every Parquet shard. The downloader checks the downloaded byte size and Parquet row count for every shard, validates the combined row count against Hugging Face's metadata, and writes per-file SHA-256 checksums to `bigdata/data/manifest.json`.
+Run `python bigdata/ingestion/download_dataset.py --config 2025-02-08_2026-02-07` from the project root to fetch every historical Parquet shard. The downloader checks each shard's byte size and row count, validates the total against Hugging Face metadata, and records SHA-256 checksums. Then run `python bigdata/scripts/clean_dataset.py --config 2025-02-08_2026-02-07` to normalize values, derive analysis features, and create a data-quality report while retaining all input rows.
 
 ## Included analyses
 
-The analytics pipeline summarizes:
+The one-year analytics pipeline summarizes:
 
 - Train performance using per-journey arrival-delay averages, then averaging journeys equally per train.
 - Arrival and departure delays by station and train category.
@@ -43,5 +43,6 @@ The analytics pipeline summarizes:
 - Reported versus estimated arrival and departure coverage, excluding missing reporting flags from the denominator.
 - Completed, cancelled, and other service statuses by distinct train journey.
 - Route-level average delay and arrival delay by stop sequence (`seq`).
+- Delay distribution across early/on-time, 1-15, 16-60, and over-60-minute bands.
 
-Missing delay values are excluded from averages. The `/summary` API and dashboard use DuckDB to aggregate the downloaded full Parquet dataset, including top train and station delays, monthly delay trends, category averages, status counts, route averages, reporting coverage, and delay by stop sequence. The API returns HTTP 503 rather than silently showing demo records if the full dataset is not present.
+Missing delay values are excluded from averages. The `/summary` API and dashboard use DuckDB to aggregate the cleaned full-year Parquet dataset, including top train and station delays, monthly delay trends, category averages, status counts, recurring route averages, reporting coverage, delay bands, and delay by stop sequence. The exact 365-day date range spans 13 calendar-month groups because its endpoints fall in partial February months. Train delays are first averaged by journey to prevent long routes from dominating; rare train/station/route results are excluded from rankings using minimum observation thresholds. The API returns HTTP 503 rather than showing demo records if the full dataset is not ready.

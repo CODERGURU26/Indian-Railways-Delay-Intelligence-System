@@ -75,6 +75,7 @@ body {
   margin: -8px 0 16px;
   color: #94a3b8;
   font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .card span,
@@ -82,6 +83,7 @@ body {
   display: block;
   color: #cbd5e1;
   font-size: 0.85rem;
+  min-width: 0;
 }
 
 .card strong,
@@ -89,10 +91,20 @@ body {
   display: block;
   margin-top: 8px;
   font-size: 1.5rem;
+  overflow-wrap: anywhere;
+}
+
+.panel li small {
+  display: block;
+  margin-top: 4px;
+  color: #94a3b8;
+  font-size: 0.78rem;
+  font-weight: 400;
 }
 
 .panel h2 {
   margin-top: 0;
+  font-size: 1.2rem;
 }
 
 .panel ul {
@@ -104,9 +116,16 @@ body {
 .panel li {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 20px;
   padding: 8px 0;
   border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.panel li strong {
+  flex-shrink: 0;
+  text-align: right;
+  font-size: 1rem;
 }
 
 .loading,
@@ -123,5 +142,20 @@ body {
 
   .chart-panel-wide {
     grid-column: auto;
+  }
+}
+
+@media (max-width: 540px) {
+  .app-shell {
+    padding: 24px 14px 48px;
+  }
+
+  .card,
+  .panel {
+    padding: 16px;
+  }
+
+  .panel li {
+    gap: 12px;
   }
 }

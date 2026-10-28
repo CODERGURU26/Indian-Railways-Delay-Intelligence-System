@@ -1,0 +1,17 @@
+{
+  "dataset": "pjay-in/indian-railways-delays",
+  "config": "2025-02-08_2026-02-07",
+  "cleaned_at": "2026-10-28T09:55:25.692145+00:00",
+  "source_rows": 17522150,
+  "retained_rows": 17522150,
+  "min_start_date": "2025-02-08",
+  "max_start_date": "2026-02-07",
+  "missing_train_number": 0,
+  "missing_station_code": 0,
+  "invalid_start_date": 0,
+  "negative_arrival_delays": 450450,
+  "arrival_delays_over_24h": 0,
+  "duplicate_journey_stops": 0,
+  "cleaned_file": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\cleaned\\2025-02-08_2026-02-07\\records.parquet",
+  "policy": "Normalize blank text and types, retain all source rows, and flag anomalies without clipping delays."
+}

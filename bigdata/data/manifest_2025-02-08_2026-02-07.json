@@ -1,0 +1,2590 @@
+{
+  "dataset": "pjay-in/indian-railways-delays",
+  "config": "2025-02-08_2026-02-07",
+  "split": "train",
+  "retrieved_at": "2026-10-28T09:55:05.153385+00:00",
+  "row_count": 17522150,
+  "expected_row_count": 17522150,
+  "shard_count": 368,
+  "total_bytes": 168819748,
+  "source_url": "https://huggingface.co/datasets/pjay-in/indian-railways-delays",
+  "license": "cc-by-4.0",
+  "files": [
+    {
+      "name": "0000.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0000.parquet",
+      "rows": 33038,
+      "bytes": 309335,
+      "sha256": "a21a44093589123f42497683d51b196cfc692dc39b95848a98e9a9aa0b691c14"
+    },
+    {
+      "name": "0001.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0001.parquet",
+      "rows": 42785,
+      "bytes": 411964,
+      "sha256": "7a5ed4e04882fd7aa68531d630663f17becb16968c49e9f2e045b49b6da7a8b1"
+    },
+    {
+      "name": "0002.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0002.parquet",
+      "rows": 47620,
+      "bytes": 458934,
+      "sha256": "dc686b8706bbc6cf8b4b37fcd899241a7f150e8b7f093a0c8a18100325f3c1bf"
+    },
+    {
+      "name": "0003.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0003.parquet",
+      "rows": 46988,
+      "bytes": 454274,
+      "sha256": "bdfa579cfa0abc63934dde16eb0417cc521f1c5dbf6ac8d1df83404f0c7a2d70"
+    },
+    {
+      "name": "0004.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0004.parquet",
+      "rows": 46470,
+      "bytes": 449207,
+      "sha256": "49b81923de463dd55baf7391dd1833c0d0cc7edf0dca8dff828f7ade7f156733"
+    },
+    {
+      "name": "0005.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0005.parquet",
+      "rows": 46981,
+      "bytes": 452688,
+      "sha256": "048627327489eb2e2e59b8f83cef7aa729df9205c7a4bb0c901c613a6f35da09"
+    },
+    {
+      "name": "0006.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0006.parquet",
+      "rows": 46563,
+      "bytes": 451678,
+      "sha256": "6c3c27e85ad706bfb6177263ad40720b3dc4b4f5252e36d61e7c1d201cdf7c47"
+    },
+    {
+      "name": "0007.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0007.parquet",
+      "rows": 46530,
+      "bytes": 450180,
+      "sha256": "a3b0e067768aca466422fcd7c080a31dda90863b2d4b90e2d08cd8af4de8e12f"
+    },
+    {
+      "name": "0008.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0008.parquet",
+      "rows": 44116,
+      "bytes": 429323,
+      "sha256": "0a7b303da673b0842e03553d28f2027ff8b189901c6dde1d221e8c9855e50743"
+    },
+    {
+      "name": "0009.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0009.parquet",
+      "rows": 45828,
+      "bytes": 448249,
+      "sha256": "6d300270e8cfa59babafd49047e59c72a98fd43881546ec98acf24d7077c01aa"
+    },
+    {
+      "name": "0010.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0010.parquet",
+      "rows": 45117,
+      "bytes": 437138,
+      "sha256": "a98576f1b4ace362fb84978663f0d7301ee15fe9ae8dde0a905e2a3902ecfe43"
+    },
+    {
+      "name": "0011.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0011.parquet",
+      "rows": 45649,
+      "bytes": 441409,
+      "sha256": "d797cde025374088d9bb0b468efdeb5e509decfdc0a4b30d0d2fd1395be8a81e"
+    },
+    {
+      "name": "0012.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0012.parquet",
+      "rows": 45812,
+      "bytes": 442878,
+      "sha256": "1ce3f6d90ccc645b951dcb4263c0fd3bfc02f504fd83e1c80a54251ab2d30da1"
+    },
+    {
+      "name": "0013.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0013.parquet",
+      "rows": 45689,
+      "bytes": 442762,
+      "sha256": "1e208e57750aa8161486b6148d3e793d3116ed2eb08f172dd5fecc2348f73346"
+    },
+    {
+      "name": "0014.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0014.parquet",
+      "rows": 45021,
+      "bytes": 437851,
+      "sha256": "d801e6afdb88312fe9c097e79ea56f33fd864de45584892a7accbd1b47a1b2da"
+    },
+    {
+      "name": "0015.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0015.parquet",
+      "rows": 44086,
+      "bytes": 430345,
+      "sha256": "e4bf9e675998ceedf859183aee75c52214cc069f3c6d661c41096921599b99fa"
+    },
+    {
+      "name": "0016.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0016.parquet",
+      "rows": 45981,
+      "bytes": 446801,
+      "sha256": "e881076755348c0163daa42fa6ce12b1a1e50d36bb100bc9a9c992fc53444f6e"
+    },
+    {
+      "name": "0017.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0017.parquet",
+      "rows": 45597,
+      "bytes": 441520,
+      "sha256": "2c70674dfe9de2d6dea24df0a195da2dfd39d8b1f32c747ab8564d2b98733937"
+    },
+    {
+      "name": "0018.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0018.parquet",
+      "rows": 45147,
+      "bytes": 437486,
+      "sha256": "abd2cd03a43d2b3a21f410e02e28d8fc37b05fb14f51937499cb32d35e34323b"
+    },
+    {
+      "name": "0019.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0019.parquet",
+      "rows": 45130,
+      "bytes": 438517,
+      "sha256": "cbdd00213f83a1eb9c07cd7ee417517d0407c5c1de74701e3977acd240fe1218"
+    },
+    {
+      "name": "0020.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0020.parquet",
+      "rows": 45158,
+      "bytes": 437785,
+      "sha256": "db3c621638ce6e0a0da1d98ff50da2ddd3fa251d73fa57abdd2b34d8fa29ac67"
+    },
+    {
+      "name": "0021.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0021.parquet",
+      "rows": 46479,
+      "bytes": 450601,
+      "sha256": "6c625210a12417479d49c21fafcec908a3baf02e7f96be31cbf5012129236cfe"
+    },
+    {
+      "name": "0022.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0022.parquet",
+      "rows": 45033,
+      "bytes": 439812,
+      "sha256": "9a3dbb1fd47d5ba8471c6527b9b0ba6f1cfc57c67fd69650e24ca3bbdd0a273d"
+    },
+    {
+      "name": "0023.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0023.parquet",
+      "rows": 47883,
+      "bytes": 461481,
+      "sha256": "354b40529bba7859ed9785c503f108e970e6978616d67f90946a5aec895041e6"
+    },
+    {
+      "name": "0024.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0024.parquet",
+      "rows": 47525,
+      "bytes": 457939,
+      "sha256": "466b9b5817b38d09e39392baded061f8c7c491bec8d252aef2f0bbd49a7e5836"
+    },
+    {
+      "name": "0025.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0025.parquet",
+      "rows": 47180,
+      "bytes": 455218,
+      "sha256": "36cc74cb2ad30df10070208d0dfc3003578b26448892ea14dabb59cd11776366"
+    },
+    {
+      "name": "0026.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0026.parquet",
+      "rows": 47442,
+      "bytes": 456822,
+      "sha256": "6d6d1d913772dfa92b6b7d5446ae0b78cb7d34af4920ce78382077049b9261e3"
+    },
+    {
+      "name": "0027.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0027.parquet",
+      "rows": 46915,
+      "bytes": 451315,
+      "sha256": "28acef3894faf3171653ab0ee80879a28a5ebffca6c176f88ace9bce56f66354"
+    },
+    {
+      "name": "0028.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0028.parquet",
+      "rows": 47301,
+      "bytes": 455463,
+      "sha256": "666a63faf68d008881896442614ff75e077d30e03b4c6ef9796b759f79323361"
+    },
+    {
+      "name": "0029.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0029.parquet",
+      "rows": 45694,
+      "bytes": 444684,
+      "sha256": "bfe8e824cfe99cf2efbfbefa1b8266c44bee2ba32d5538edd75a78c055940fe8"
+    },
+    {
+      "name": "0030.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0030.parquet",
+      "rows": 47873,
+      "bytes": 461163,
+      "sha256": "8d7810506beccf8d9bf3ea31b8c8ff5503d7fc06bae6ff10cecd9219b0dc0d52"
+    },
+    {
+      "name": "0031.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0031.parquet",
+      "rows": 48060,
+      "bytes": 460234,
+      "sha256": "c568ba245e384749b3ad453162b242886403bade270249d06af364fc14b8d60e"
+    },
+    {
+      "name": "0032.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0032.parquet",
+      "rows": 48307,
+      "bytes": 465140,
+      "sha256": "1754085cfc415ae62e729e15c8973bceb38249b3d2d37d7708f81e4bf49e0435"
+    },
+    {
+      "name": "0033.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0033.parquet",
+      "rows": 48228,
+      "bytes": 464863,
+      "sha256": "cde1f0eb4071b9992eff9a115fe3da7bb38b3b70bc00e44469b325d0c31c9fee"
+    },
+    {
+      "name": "0034.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0034.parquet",
+      "rows": 48877,
+      "bytes": 464950,
+      "sha256": "4e8df43fa3e98f3311e8db5a5af015021d07c8ac680211230a54e9167c650793"
+    },
+    {
+      "name": "0035.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0035.parquet",
+      "rows": 48586,
+      "bytes": 462819,
+      "sha256": "4995fb54c4cb4236c10a63362009cb20d73dd6bca1d88d57bdfd3c1f7b84d650"
+    },
+    {
+      "name": "0036.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0036.parquet",
+      "rows": 46179,
+      "bytes": 444783,
+      "sha256": "1850e9e70b9892bfab3004616a5e505fd555820184a1e99072b57e08c8ff2edc"
+    },
+    {
+      "name": "0037.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0037.parquet",
+      "rows": 48626,
+      "bytes": 466674,
+      "sha256": "e98e44daf5b80cf967913fc31c0eb93110e811f28c1a62de958a6abd8da976b6"
+    },
+    {
+      "name": "0038.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0038.parquet",
+      "rows": 48402,
+      "bytes": 462258,
+      "sha256": "51b64b79826620638a73afea39ef6a5bb73df336ef7ae6ef2e5fc4fe52398fb3"
+    },
+    {
+      "name": "0039.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0039.parquet",
+      "rows": 48619,
+      "bytes": 466865,
+      "sha256": "26626249c407d100c49b2425b79228dff16272c40d8eccd44dd6f0169a236256"
+    },
+    {
+      "name": "0040.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0040.parquet",
+      "rows": 48501,
+      "bytes": 465654,
+      "sha256": "206fe1e4b88fa81a323f080dfbfbebca4318473fd59aa99582badc659ba34047"
+    },
+    {
+      "name": "0041.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0041.parquet",
+      "rows": 48310,
+      "bytes": 463818,
+      "sha256": "6ab834b998b1fdace12b28baf984f003ae38e2d8790e723c158d0602b31d0cd3"
+    },
+    {
+      "name": "0042.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0042.parquet",
+      "rows": 48192,
+      "bytes": 464711,
+      "sha256": "36f31c7fcbd4868202089ec73fe7ec73fabc7b6ca9d24b702369b69506eb9eea"
+    },
+    {
+      "name": "0043.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0043.parquet",
+      "rows": 46376,
+      "bytes": 448016,
+      "sha256": "af6a99550bdf9005d9e90d3f5db5c828d4ebad37c9356c1c7d7bf491f24e10c6"
+    },
+    {
+      "name": "0044.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0044.parquet",
+      "rows": 47915,
+      "bytes": 460590,
+      "sha256": "9f73266a592c9c559032449a23cc3758e24f2cbc8ff62c86d23620a94ce18d61"
+    },
+    {
+      "name": "0045.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0045.parquet",
+      "rows": 48152,
+      "bytes": 461176,
+      "sha256": "410902a7fc5b1f77c4dfdfe48fa821147b2ad967b781373e5d16dc9a02e1c7bc"
+    },
+    {
+      "name": "0046.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0046.parquet",
+      "rows": 47945,
+      "bytes": 460984,
+      "sha256": "b1b14e17af48d6b25035dee060d61a52beb8291bf64ecf868671831a4bcb3c55"
+    },
+    {
+      "name": "0047.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0047.parquet",
+      "rows": 48848,
+      "bytes": 470069,
+      "sha256": "b199f1dd3cf6183cbcc3b5e74e9ea0af75a78e469c46c01942823bde0b376ed4"
+    },
+    {
+      "name": "0048.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0048.parquet",
+      "rows": 48538,
+      "bytes": 466967,
+      "sha256": "7588d7c669a87c14aa6ebd7369bf52202597ae6be18769dbb6bee75681e72adb"
+    },
+    {
+      "name": "0049.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0049.parquet",
+      "rows": 47787,
+      "bytes": 462551,
+      "sha256": "6993c7c322e51a5933574be1c275c8a2f493ea30b3ad00304d81c74a965456c8"
+    },
+    {
+      "name": "0050.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0050.parquet",
+      "rows": 46691,
+      "bytes": 455059,
+      "sha256": "e6ee4fdcdb9b8b17d726574fdecd9bf26a45b1b02b35570c914337ec974a7fb4"
+    },
+    {
+      "name": "0051.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0051.parquet",
+      "rows": 48698,
+      "bytes": 468144,
+      "sha256": "2ee8794ee943b9ffc4ef9102520669168cffdade7b283396bf9f4f8023bdc574"
+    },
+    {
+      "name": "0052.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0052.parquet",
+      "rows": 49172,
+      "bytes": 468326,
+      "sha256": "1b9ef37af79835e4c4368ee8311452ce2ea7fbb04dd9782b91b113ee3f93e761"
+    },
+    {
+      "name": "0053.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0053.parquet",
+      "rows": 49476,
+      "bytes": 473928,
+      "sha256": "fe8edd3c3b25c5da6df6422b48d6b03e35b62de8b757cd4da3dbbd3dd0bc5794"
+    },
+    {
+      "name": "0054.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0054.parquet",
+      "rows": 49938,
+      "bytes": 477617,
+      "sha256": "7b3ff92e9b991d497c065ce1d29d79fa948ce8e06c5901a35dacc5be0410b9d2"
+    },
+    {
+      "name": "0055.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0055.parquet",
+      "rows": 49855,
+      "bytes": 473341,
+      "sha256": "e446dc793f4260cc12bc09c6647eca5a076c24acbe9a70d9b7b2336b6bef15e3"
+    },
+    {
+      "name": "0056.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0056.parquet",
+      "rows": 49834,
+      "bytes": 476365,
+      "sha256": "ce79d227748b3c10277ee8ea4809c009dbddb5b3af28fbe0bba94a90fdaae7ad"
+    },
+    {
+      "name": "0057.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0057.parquet",
+      "rows": 47636,
+      "bytes": 453505,
+      "sha256": "89896617a11aa5f9d484683045f6aa84e0c92c259ea011f339c52ce6c7f4312e"
+    },
+    {
+      "name": "0058.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0058.parquet",
+      "rows": 49513,
+      "bytes": 473119,
+      "sha256": "21fafccc4ea929f8e3f2109e7ef0d36faa7db695c98abf4bc55d6ac0242f30ca"
+    },
+    {
+      "name": "0059.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0059.parquet",
+      "rows": 49724,
+      "bytes": 469489,
+      "sha256": "5125fcbb97f4809500ff0bda082cacdfb83c8d40c2c38e65ac9943c9832acd34"
+    },
+    {
+      "name": "0060.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0060.parquet",
+      "rows": 49682,
+      "bytes": 473913,
+      "sha256": "afab660e037e1641df464a95e84ca8fe5f4d2669a0d6c48746fb7ce1465565ad"
+    },
+    {
+      "name": "0061.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0061.parquet",
+      "rows": 50038,
+      "bytes": 475280,
+      "sha256": "f7cd0113f594e6f87dc63d70a0796111033b9e429c6a4948f39cfe4a3f86b39d"
+    },
+    {
+      "name": "0062.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0062.parquet",
+      "rows": 49221,
+      "bytes": 469390,
+      "sha256": "1270d2128a73c54361c890a5c2334b3fe9e449a66760ac66e8737e756e7feb8c"
+    },
+    {
+      "name": "0063.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0063.parquet",
+      "rows": 49678,
+      "bytes": 471949,
+      "sha256": "e31010138f09f93ffbc0404a8bbeb0cfc399410a51e706d109bbd18b61b11437"
+    },
+    {
+      "name": "0064.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0064.parquet",
+      "rows": 48451,
+      "bytes": 462275,
+      "sha256": "7fc823a1415fdb5710e8baaf4feb7da6f220acb026427b6b2409070290e7f90a"
+    },
+    {
+      "name": "0065.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0065.parquet",
+      "rows": 50619,
+      "bytes": 482008,
+      "sha256": "6a32c72334601cc2180cf5ab500879a043d09cec70a5c47d2473783c80a77179"
+    },
+    {
+      "name": "0066.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0066.parquet",
+      "rows": 50755,
+      "bytes": 478766,
+      "sha256": "4bfc7a7a6225b6a6999edec8f3976fbd4ae4bbfc749007762405c483ab7d0967"
+    },
+    {
+      "name": "0067.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0067.parquet",
+      "rows": 50367,
+      "bytes": 476582,
+      "sha256": "e88537a153afab442e2e1dd01d507002b50b5138e11e564c732a89e1e25765d4"
+    },
+    {
+      "name": "0068.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0068.parquet",
+      "rows": 50235,
+      "bytes": 475763,
+      "sha256": "24a567b81ea444602f6aba2f594648e4a6acd9cae99d10f8e23712583d428398"
+    },
+    {
+      "name": "0069.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0069.parquet",
+      "rows": 50019,
+      "bytes": 472708,
+      "sha256": "367dfe24b3875612e3058398e2bbf29da5ed36d63fbb6716fbbe69d38252d703"
+    },
+    {
+      "name": "0070.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0070.parquet",
+      "rows": 49763,
+      "bytes": 475123,
+      "sha256": "566ec89556cc8b0807aff0caed1c18ece7eefd01909e29aca9d4f8d064b1e626"
+    },
+    {
+      "name": "0071.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0071.parquet",
+      "rows": 48605,
+      "bytes": 460750,
+      "sha256": "0f0f9cd82d6bdcaef29ed044abd957c5518acf8801ffaffc261d277b4b01ec5a"
+    },
+    {
+      "name": "0072.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0072.parquet",
+      "rows": 49881,
+      "bytes": 472330,
+      "sha256": "f1dd966d1de46bd887169a2e5ca1a246caf7babcf798d0f93a27232d95fbd330"
+    },
+    {
+      "name": "0073.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0073.parquet",
+      "rows": 50379,
+      "bytes": 475500,
+      "sha256": "f29db2915392aaf041e4cc1b0f760586471b38ef45b6380ee966ae84eb930ccf"
+    },
+    {
+      "name": "0074.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0074.parquet",
+      "rows": 50151,
+      "bytes": 473037,
+      "sha256": "346a159688f39e105914ed6abdc141c2ce179a8f003e59fcd65df253ffcaa6aa"
+    },
+    {
+      "name": "0075.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0075.parquet",
+      "rows": 50655,
+      "bytes": 477200,
+      "sha256": "634d88025a9bd709f0fd94377747cc9cfc9e41cfbf83f7742e986e913f65463e"
+    },
+    {
+      "name": "0076.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0076.parquet",
+      "rows": 50010,
+      "bytes": 474282,
+      "sha256": "9090906d143fd8e33f084853a87f0e8d54e365455dd7e733caa213c00980f37b"
+    },
+    {
+      "name": "0077.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0077.parquet",
+      "rows": 49760,
+      "bytes": 473578,
+      "sha256": "d8eeb8ae132ba98302200e181595a4478b3003ad50e34a2976e74ff2ac364a97"
+    },
+    {
+      "name": "0078.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0078.parquet",
+      "rows": 48116,
+      "bytes": 458111,
+      "sha256": "637aace29cc2f57aedeb00b7c9b23e1e3d4b9dc8c357abb1934dff0081bac02a"
+    },
+    {
+      "name": "0079.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0079.parquet",
+      "rows": 49852,
+      "bytes": 472613,
+      "sha256": "682840b267aaa5e21e3e3ca3be7813278c3de37dbc482623bea4b46dadec6dc1"
+    },
+    {
+      "name": "0080.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0080.parquet",
+      "rows": 49689,
+      "bytes": 471574,
+      "sha256": "2bba6c782397f260aeaace1d11adc5bdc09a3d9c4c8693b8f9f194c19e31ed70"
+    },
+    {
+      "name": "0081.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0081.parquet",
+      "rows": 50330,
+      "bytes": 475230,
+      "sha256": "8e9de37fa0e82189010b19f0fabb34c49f9571378e9a1562feae506f13fecfb2"
+    },
+    {
+      "name": "0082.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0082.parquet",
+      "rows": 50050,
+      "bytes": 472635,
+      "sha256": "b0d1a16d7b219a534daf1c34f9d35c0bd450dba7599b400cce54f127fe922d1a"
+    },
+    {
+      "name": "0083.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0083.parquet",
+      "rows": 49589,
+      "bytes": 469601,
+      "sha256": "6870de26a85ed85174e57332a3238b7ee3f9e25634bfb6e68ba4920595396031"
+    },
+    {
+      "name": "0084.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0084.parquet",
+      "rows": 50744,
+      "bytes": 479262,
+      "sha256": "16a7db4b85dd1a6cad9ee642b0191758ea811c6e7341d066c02ee598cd7af73f"
+    },
+    {
+      "name": "0085.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0085.parquet",
+      "rows": 48721,
+      "bytes": 462362,
+      "sha256": "d0413004a9e2e947e6b1cc538c0802a6fa09a2da9f4f11287b215da436207c2a"
+    },
+    {
+      "name": "0086.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0086.parquet",
+      "rows": 51568,
+      "bytes": 486783,
+      "sha256": "53f6f94a88d1e671fd65a99a5d2751ad426b1c7797067ccef9fa40b948675dc7"
+    },
+    {
+      "name": "0087.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0087.parquet",
+      "rows": 49476,
+      "bytes": 470806,
+      "sha256": "7030059da3d468b2eb6a43801f1c6ec864e1b84efb8cac71fab538423d5b6a9a"
+    },
+    {
+      "name": "0088.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0088.parquet",
+      "rows": 50154,
+      "bytes": 476161,
+      "sha256": "2a4d9edb03d8e9d90d22c19c1085302f83bf48e238a51781a932c4e4605c99b8"
+    },
+    {
+      "name": "0089.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0089.parquet",
+      "rows": 50263,
+      "bytes": 479980,
+      "sha256": "0e88ab8858cd5e8b215d5276b310476f380127e6022ac20eaee407946298b09f"
+    },
+    {
+      "name": "0090.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0090.parquet",
+      "rows": 50394,
+      "bytes": 481130,
+      "sha256": "099dfafb9782f43fcdab8d2c72602596df7886aa3a822f5f2d777cee7441b130"
+    },
+    {
+      "name": "0091.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0091.parquet",
+      "rows": 49864,
+      "bytes": 477645,
+      "sha256": "1389b960d8cfaac3a9452ed37baf66dca610df42d917fffe96a8e437fea2d6be"
+    },
+    {
+      "name": "0092.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0092.parquet",
+      "rows": 48182,
+      "bytes": 460495,
+      "sha256": "ca1bfd1adb5ee2f7771e572786c26feb4d929b4883744f877a4589549a38666d"
+    },
+    {
+      "name": "0093.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0093.parquet",
+      "rows": 50428,
+      "bytes": 478150,
+      "sha256": "c1c32177dd18410e19b1dbb1f4343c55bd4972155b93aba865f065c438a915e2"
+    },
+    {
+      "name": "0094.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0094.parquet",
+      "rows": 50113,
+      "bytes": 474798,
+      "sha256": "a570af9ba047117b51a6e869162051bc8c1c1172a89f65071c94919331fa7826"
+    },
+    {
+      "name": "0095.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0095.parquet",
+      "rows": 50003,
+      "bytes": 475929,
+      "sha256": "660e1fa30341ed5a86a40376b185b89ebf7c76659bb9cb656ec97182685a7643"
+    },
+    {
+      "name": "0096.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0096.parquet",
+      "rows": 49720,
+      "bytes": 474623,
+      "sha256": "c90357ec36bfeab1e438d4db0ee9b724e40b3ec671132089441c1496d0f2c3c1"
+    },
+    {
+      "name": "0097.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0097.parquet",
+      "rows": 50013,
+      "bytes": 475701,
+      "sha256": "a75f301aff967967141f7c6ca68f05398d35a52e21506b5bef6b206d5daba3e8"
+    },
+    {
+      "name": "0098.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0098.parquet",
+      "rows": 50046,
+      "bytes": 480173,
+      "sha256": "bfb0be22c3826f6dae72ca45c4ff6079145c2258b27596483da1d8a80fb066bf"
+    },
+    {
+      "name": "0099.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0099.parquet",
+      "rows": 48437,
+      "bytes": 462299,
+      "sha256": "e51e7ced72ba6cb8dd370ea42f2e3dda2c96e27278a391f05f05952bcb1d6197"
+    },
+    {
+      "name": "0100.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0100.parquet",
+      "rows": 50107,
+      "bytes": 476632,
+      "sha256": "2dc761c7ccc6881428cdf6f65d17efee37c65e30f33d74d27880e496a0548fad"
+    },
+    {
+      "name": "0101.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0101.parquet",
+      "rows": 49698,
+      "bytes": 474570,
+      "sha256": "c26bbd84cb7e299c51bf522949ea689940af2e8d415f0117968550fcdf309e3e"
+    },
+    {
+      "name": "0102.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0102.parquet",
+      "rows": 49761,
+      "bytes": 476112,
+      "sha256": "f6ff8c19e387fede471158cebc172c60fa034e97c78b8531ee6e0e03203a8bc2"
+    },
+    {
+      "name": "0103.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0103.parquet",
+      "rows": 48659,
+      "bytes": 471154,
+      "sha256": "9249d585d8ede934c24829a52de0a4cf2382d7b41e3d9d8934631616f676dfd0"
+    },
+    {
+      "name": "0104.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0104.parquet",
+      "rows": 49518,
+      "bytes": 475182,
+      "sha256": "e52400302dbcecb319bde8aa5d88bf61af1762aad577f0a31df77a957ed99595"
+    },
+    {
+      "name": "0105.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0105.parquet",
+      "rows": 48915,
+      "bytes": 469102,
+      "sha256": "a78a0d0fd55a8d82bea5da4c7ee79ffe0983070f1ed7165796cd0683cd37e806"
+    },
+    {
+      "name": "0106.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0106.parquet",
+      "rows": 47587,
+      "bytes": 458081,
+      "sha256": "40f5b67daeb1b39c97e9fcb776a6fab3293a6fdf65d47917f661ad46f4ccba28"
+    },
+    {
+      "name": "0107.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0107.parquet",
+      "rows": 49724,
+      "bytes": 474046,
+      "sha256": "f8095ed1568f6c57347eb90f58566aff23cab2b9ac86d25dba853ab94180ac18"
+    },
+    {
+      "name": "0108.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0108.parquet",
+      "rows": 49263,
+      "bytes": 470671,
+      "sha256": "8ec6ea8fedb07d95677c5552627310c28b0ae57e3dd71264e164045406679485"
+    },
+    {
+      "name": "0109.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0109.parquet",
+      "rows": 49944,
+      "bytes": 476404,
+      "sha256": "bfb670ae10e6aa7ce9d3cb008d6d165c37fb7e9c4b54e0b56627dd5801954d10"
+    },
+    {
+      "name": "0110.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0110.parquet",
+      "rows": 49685,
+      "bytes": 476478,
+      "sha256": "5352f6262af62d02e44299a56afdb1d447138a1670d5fc96097edeb8750c4fd5"
+    },
+    {
+      "name": "0111.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0111.parquet",
+      "rows": 48719,
+      "bytes": 466638,
+      "sha256": "dfb04e78c84a20ce8721eefbf03b4e7ab3987dac4263c869af1dbb2bc5edc9d4"
+    },
+    {
+      "name": "0112.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0112.parquet",
+      "rows": 48335,
+      "bytes": 464128,
+      "sha256": "467a4732b71dc442e097afd66808bc5f7952981914da2a9d238da97b8869e9c0"
+    },
+    {
+      "name": "0113.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0113.parquet",
+      "rows": 47192,
+      "bytes": 455126,
+      "sha256": "76ac1091bf1382eb8d2a878bf4ecf59d5b69ed8ead9245d1219a87e93e9ea7b2"
+    },
+    {
+      "name": "0114.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0114.parquet",
+      "rows": 49548,
+      "bytes": 473162,
+      "sha256": "d20782e804a587151557ecacfd190ca4f6fcd12b0a2ee2f4623d7b10bda26b97"
+    },
+    {
+      "name": "0115.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0115.parquet",
+      "rows": 48398,
+      "bytes": 463314,
+      "sha256": "58d7a138c43ec479de92b1da758b363d60f2a8983dc5d0c2958680fef948eadd"
+    },
+    {
+      "name": "0116.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0116.parquet",
+      "rows": 49239,
+      "bytes": 472902,
+      "sha256": "0bf5b38ec4248ba7a0066f62e25b45124d7225e6cae3b50cfc8392121f5810b1"
+    },
+    {
+      "name": "0117.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0117.parquet",
+      "rows": 49473,
+      "bytes": 473339,
+      "sha256": "141a15d31f5867ab124597975c7121d43611b03a3b333d1d2bbb749425f67a2f"
+    },
+    {
+      "name": "0118.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0118.parquet",
+      "rows": 49065,
+      "bytes": 471349,
+      "sha256": "471e38df77a41ff06a18ad65768ed4a46081bfc93510df96f78de8167d1c8dab"
+    },
+    {
+      "name": "0119.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0119.parquet",
+      "rows": 48741,
+      "bytes": 467097,
+      "sha256": "70c607c65d2e98e005c28a026ec10e965effd3902c6cf996b1129c2fe8b11d56"
+    },
+    {
+      "name": "0120.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0120.parquet",
+      "rows": 47698,
+      "bytes": 458557,
+      "sha256": "202873d23b33d4245b6828b6b20e97f88276a772abddf61d4b88ae8d95d491c9"
+    },
+    {
+      "name": "0121.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0121.parquet",
+      "rows": 49374,
+      "bytes": 472356,
+      "sha256": "2438e411f1bbfb6857ee5e46cae7cc6a0df56cf6649577ca8fc4b381c84caaa6"
+    },
+    {
+      "name": "0122.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0122.parquet",
+      "rows": 48733,
+      "bytes": 469601,
+      "sha256": "8d593d8d2ea3531e5b60ed8b9d94ddd85fe5f1ba3200ba3821f7116a69fb23a0"
+    },
+    {
+      "name": "0123.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0123.parquet",
+      "rows": 49193,
+      "bytes": 472592,
+      "sha256": "b5c9058ac314abc3f6d96ff4ff0549ed7bdff10901ae28836bfca662c41f25aa"
+    },
+    {
+      "name": "0124.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0124.parquet",
+      "rows": 48851,
+      "bytes": 471034,
+      "sha256": "efd1d1b36173c7279edb5fbe48b70dfbfe489aac718f7db861c11ed38730035c"
+    },
+    {
+      "name": "0125.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0125.parquet",
+      "rows": 48901,
+      "bytes": 471156,
+      "sha256": "af267ec1bdb9bf4ae587414193afbd99dd9734c62f294e06f02ef0181c86546b"
+    },
+    {
+      "name": "0126.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0126.parquet",
+      "rows": 48619,
+      "bytes": 468815,
+      "sha256": "fd889175ed02a38071e63e57500bfc800baa08825a9b67665d08c915fcbad349"
+    },
+    {
+      "name": "0127.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0127.parquet",
+      "rows": 46875,
+      "bytes": 452265,
+      "sha256": "0754dcb552a3ec584340e71e989081410a527be95afe9fc3849e1f882f3b1608"
+    },
+    {
+      "name": "0128.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0128.parquet",
+      "rows": 49132,
+      "bytes": 472954,
+      "sha256": "0eaf32ef24f493b8a18bec7c166dcae5d48d41c596dd6bc9910a643166e0d0b7"
+    },
+    {
+      "name": "0129.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0129.parquet",
+      "rows": 49515,
+      "bytes": 474220,
+      "sha256": "40637d3632559b7151cb9ad5e33ce84a3b687173059530dc80b5b484566cad95"
+    },
+    {
+      "name": "0130.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0130.parquet",
+      "rows": 49544,
+      "bytes": 472236,
+      "sha256": "cecf08a15ae4d49dced3ef4f5f436feb022ab187170b03d3ebe9ef509d5e021b"
+    },
+    {
+      "name": "0131.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0131.parquet",
+      "rows": 50220,
+      "bytes": 480248,
+      "sha256": "661b56663e75547317382621083825ab69f427505d4a07a5e91f3985047fc48b"
+    },
+    {
+      "name": "0132.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0132.parquet",
+      "rows": 49957,
+      "bytes": 477761,
+      "sha256": "dec44f70034a4e93ae7a5c40fb637a5797ce13cd573a516c95ac71313a3b7bc2"
+    },
+    {
+      "name": "0133.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0133.parquet",
+      "rows": 50405,
+      "bytes": 481923,
+      "sha256": "735ec5d11bf7daa306d51e54493fefd7af2db739a21875f138e44012f55cf4e4"
+    },
+    {
+      "name": "0134.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0134.parquet",
+      "rows": 47951,
+      "bytes": 459102,
+      "sha256": "1475751d3ca11d3bcfba65b3999a21310566c587583e80d097127152dd4284b0"
+    },
+    {
+      "name": "0135.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0135.parquet",
+      "rows": 49856,
+      "bytes": 476084,
+      "sha256": "9048161763024cb683fc14a4bfe2c43cfec36d383741bac21cac9b5d44ef94ab"
+    },
+    {
+      "name": "0136.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0136.parquet",
+      "rows": 49946,
+      "bytes": 477268,
+      "sha256": "b8b1343b9b31a71842c77227b7a2fe76e70f65b50574a7da1916612064be00e0"
+    },
+    {
+      "name": "0137.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0137.parquet",
+      "rows": 50033,
+      "bytes": 478023,
+      "sha256": "a5303b4624fa27c43ac536637917b01a6f22aecb5039c80e822f128cc9e75310"
+    },
+    {
+      "name": "0138.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0138.parquet",
+      "rows": 49782,
+      "bytes": 476462,
+      "sha256": "7ac58c4a33b563cfadbf991d6228847355e51d049dc3e4e3cf5569b63b6ec32f"
+    },
+    {
+      "name": "0139.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0139.parquet",
+      "rows": 49506,
+      "bytes": 475237,
+      "sha256": "b6c603169da66f5a814f76a5a92ef09e26b511e0a694468093ae6bbec5f33f7b"
+    },
+    {
+      "name": "0140.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0140.parquet",
+      "rows": 49967,
+      "bytes": 476617,
+      "sha256": "08528ce5c024a93c0fba6f29ad54842c057d5413a9b5db6073ba6ee019006882"
+    },
+    {
+      "name": "0141.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0141.parquet",
+      "rows": 47281,
+      "bytes": 455835,
+      "sha256": "65f381083ef037a97ce75160fa5312c1661fdeb557ad82894a4f4470377925fe"
+    },
+    {
+      "name": "0142.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0142.parquet",
+      "rows": 49718,
+      "bytes": 475350,
+      "sha256": "c1e2e4c68050dc93bdd58305362693e85e3e9201eb5ce4e06bbdeacea29fac6b"
+    },
+    {
+      "name": "0143.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0143.parquet",
+      "rows": 49783,
+      "bytes": 474763,
+      "sha256": "10761e69a5f6afa3cb7d9c56c099b8490de8da07774e6668a5bcb3597c90870d"
+    },
+    {
+      "name": "0144.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0144.parquet",
+      "rows": 49362,
+      "bytes": 472770,
+      "sha256": "a10515515c716e63994bd3ce02fe35d31d42f68e72d85ac896d811827a018d07"
+    },
+    {
+      "name": "0145.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0145.parquet",
+      "rows": 49310,
+      "bytes": 470996,
+      "sha256": "ce7e7e7acc3ea206a7a9a3ca9eb88fb6ebf5eb310d55519d5c756cc96307eee5"
+    },
+    {
+      "name": "0146.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0146.parquet",
+      "rows": 48794,
+      "bytes": 467943,
+      "sha256": "1d66d43070db5fcf14b7ef2c822bef1cfbd883152939148ea81b15068b4e6539"
+    },
+    {
+      "name": "0147.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0147.parquet",
+      "rows": 49073,
+      "bytes": 470374,
+      "sha256": "37d52889c74aac2e43245875a84eb9e3c213a61ad08c2cac73814813c1e627b3"
+    },
+    {
+      "name": "0148.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0148.parquet",
+      "rows": 46849,
+      "bytes": 452387,
+      "sha256": "9bc1b8af120844609126cbbf931fa8bf9060e83cad35b6ee8464a11de96a3344"
+    },
+    {
+      "name": "0149.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0149.parquet",
+      "rows": 49694,
+      "bytes": 475106,
+      "sha256": "72d0a652804d266e96eaaa0230dbe697cf6223043fe595c98f5b491f84905354"
+    },
+    {
+      "name": "0150.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0150.parquet",
+      "rows": 48971,
+      "bytes": 469713,
+      "sha256": "610591bfb313a5291d03a3e07220752abcef12b79628dd5d2046c2bec1a14fad"
+    },
+    {
+      "name": "0151.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0151.parquet",
+      "rows": 49720,
+      "bytes": 472632,
+      "sha256": "0a33d03e4827e282313bc2b8b11e52939995c05b8045c9460689a31dc39c2b8b"
+    },
+    {
+      "name": "0152.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0152.parquet",
+      "rows": 50049,
+      "bytes": 476247,
+      "sha256": "380b64eeb0dca637cea043e727ca3661065d347aca37e88dd0fb0304be4407e1"
+    },
+    {
+      "name": "0153.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0153.parquet",
+      "rows": 49632,
+      "bytes": 474923,
+      "sha256": "5c34498861fd061e89b974b66cf5a7ac5650b7f3001ad5ebd05d78e8fb6350a0"
+    },
+    {
+      "name": "0154.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0154.parquet",
+      "rows": 49383,
+      "bytes": 470687,
+      "sha256": "acea2a5526113bd2cc21b5fd0c3a9ae5b2bbfd4a8ec181087b16b89733025a45"
+    },
+    {
+      "name": "0155.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0155.parquet",
+      "rows": 48147,
+      "bytes": 464018,
+      "sha256": "6770c24e66609c147fbfbbd8db6f7d8060402ec21b2989bf7aeac57e846a33f6"
+    },
+    {
+      "name": "0156.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0156.parquet",
+      "rows": 49598,
+      "bytes": 473479,
+      "sha256": "674e033b08a9787a80190ca8c9c2cb00a817ead7f520860ff255c36e8c291c41"
+    },
+    {
+      "name": "0157.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0157.parquet",
+      "rows": 50100,
+      "bytes": 478923,
+      "sha256": "0ffdd1e17c6cc8299ab4120989264e2eeaaf26ed23887578b35aa030906cd2b0"
+    },
+    {
+      "name": "0158.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0158.parquet",
+      "rows": 50258,
+      "bytes": 480367,
+      "sha256": "2aff073c8ff50b7371bfb0beed4605db178fb84123da55a224fe1e3435f17744"
+    },
+    {
+      "name": "0159.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0159.parquet",
+      "rows": 50588,
+      "bytes": 483604,
+      "sha256": "785d2622b1dabf36782817cb1822df2598a2ca2bc06ae83ae6b79235f6dd252b"
+    },
+    {
+      "name": "0160.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0160.parquet",
+      "rows": 49850,
+      "bytes": 478396,
+      "sha256": "918bae05e82f8fd48f4d40da050ba2e6cef720ae2609f5e7f2d2fe1c4f6d091a"
+    },
+    {
+      "name": "0161.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0161.parquet",
+      "rows": 49778,
+      "bytes": 476722,
+      "sha256": "5456e82336364603acad8af40a915b4bb61901208d371e8e055884dd07aab30d"
+    },
+    {
+      "name": "0162.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0162.parquet",
+      "rows": 47985,
+      "bytes": 461467,
+      "sha256": "e8f497436317a3a5c444bca68f3c3efa6fc51be0ef5cacbdf43f17940affc44f"
+    },
+    {
+      "name": "0163.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0163.parquet",
+      "rows": 49753,
+      "bytes": 477249,
+      "sha256": "ac6e1f46f58edb7dd704fcea32847cfdeed20cc5cc4f6d4acdd82fd664f099cf"
+    },
+    {
+      "name": "0164.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0164.parquet",
+      "rows": 50704,
+      "bytes": 482355,
+      "sha256": "de6c0f3ee590b542704856b4ce9ae0df9703d3294ccc55534bdd4b2c765cd0ca"
+    },
+    {
+      "name": "0165.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0165.parquet",
+      "rows": 49725,
+      "bytes": 475746,
+      "sha256": "fc4045f65575d655695220d1b3370b76986fdb7b03ff0fb23f721e2cae376870"
+    },
+    {
+      "name": "0166.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0166.parquet",
+      "rows": 49242,
+      "bytes": 472643,
+      "sha256": "ca4fc56b5ba3555871faec2650824804e019319521c99e3bd46df65dc6ce47f7"
+    },
+    {
+      "name": "0167.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0167.parquet",
+      "rows": 49304,
+      "bytes": 474478,
+      "sha256": "c5db20a5d22a50fc2e4e4a881a2390614862a61c9a16b12a7b85ca74bed9c4ea"
+    },
+    {
+      "name": "0168.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0168.parquet",
+      "rows": 49278,
+      "bytes": 472114,
+      "sha256": "cbdce13a57a2a03189048c8a6f05e848de734d61f7c6d33b0b7c56600f783790"
+    },
+    {
+      "name": "0169.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0169.parquet",
+      "rows": 47550,
+      "bytes": 456369,
+      "sha256": "5ec77961c93067547a0b5ca145f432cab9ed6ab3aac4c29a89dec0f30d940ffb"
+    },
+    {
+      "name": "0170.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0170.parquet",
+      "rows": 49688,
+      "bytes": 477604,
+      "sha256": "ae55818bf16a5bc4fd2e8b836a90f77e6f933961ad8d82f2c3dbd8095aa73350"
+    },
+    {
+      "name": "0171.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0171.parquet",
+      "rows": 49019,
+      "bytes": 469582,
+      "sha256": "e3ffb5181edeadd13e0ef4e1ba1b35b72f5ccb446c9aca897b0acad3d24b1b6e"
+    },
+    {
+      "name": "0172.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0172.parquet",
+      "rows": 49792,
+      "bytes": 478005,
+      "sha256": "dead82441ac621d4ceb6007bf73ff0a8463e619c0300e244af224a8bb09c5aef"
+    },
+    {
+      "name": "0173.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0173.parquet",
+      "rows": 49211,
+      "bytes": 472130,
+      "sha256": "8b82a4849414dc62645025ef941509f8aafb0841e3fcc2bc63e550f9c2146fbe"
+    },
+    {
+      "name": "0174.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0174.parquet",
+      "rows": 49006,
+      "bytes": 468656,
+      "sha256": "4cfc4a8ab851e0c09e84c586e058e52097c7a01805cbd1a2f25e4a73f34c85dc"
+    },
+    {
+      "name": "0175.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0175.parquet",
+      "rows": 50109,
+      "bytes": 483486,
+      "sha256": "6160b7a489a7f47d238741c56a96db3888c36e9b58794872e47a09732ee1e17c"
+    },
+    {
+      "name": "0176.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0176.parquet",
+      "rows": 47210,
+      "bytes": 455211,
+      "sha256": "57f06a24bf3ee80b078bca3442253d288c1824360726dc9d5117f0114ad8e9f4"
+    },
+    {
+      "name": "0177.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0177.parquet",
+      "rows": 50105,
+      "bytes": 481235,
+      "sha256": "370ffaee3b57a791f823073762fd837639dd5af002d28b32de132b76dcb0ae9b"
+    },
+    {
+      "name": "0178.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0178.parquet",
+      "rows": 49117,
+      "bytes": 471460,
+      "sha256": "faed942925844320b466edc06f2a1ddcbbaba1f9de35fe922eac7a0140c7a7a8"
+    },
+    {
+      "name": "0179.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0179.parquet",
+      "rows": 49636,
+      "bytes": 473009,
+      "sha256": "45ba8ead69da27f4f5f20422679d554523fdc815688d5b549d0e5cabe1ed0546"
+    },
+    {
+      "name": "0180.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0180.parquet",
+      "rows": 49527,
+      "bytes": 474574,
+      "sha256": "ea7a864feae984f4347261e1ba8d1c9ea50756a07939bc791512889ff93cf1ac"
+    },
+    {
+      "name": "0181.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0181.parquet",
+      "rows": 47617,
+      "bytes": 459366,
+      "sha256": "9754b832e3b54681756abc00ae8a3be61e24c0a524ca99eb0141828b8ad40177"
+    },
+    {
+      "name": "0182.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0182.parquet",
+      "rows": 48642,
+      "bytes": 468191,
+      "sha256": "44f080a0492947c635de94562aa87b1a997a126e7f64aad20fc153139b870be0"
+    },
+    {
+      "name": "0183.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0183.parquet",
+      "rows": 46402,
+      "bytes": 449889,
+      "sha256": "f561427619f968dfc6c6b09402aac8f087140362c2c41831ec3aca12b3e6a5c5"
+    },
+    {
+      "name": "0184.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0184.parquet",
+      "rows": 47565,
+      "bytes": 458064,
+      "sha256": "7350429d26fb127469605ccedf1f18dcac59ebbaa27e25f8fafa24898f59a0d6"
+    },
+    {
+      "name": "0185.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0185.parquet",
+      "rows": 47957,
+      "bytes": 458705,
+      "sha256": "e2fede3b47434ef3b6e346a02197fffa00a91661375677dde0cd18bf34a06a7e"
+    },
+    {
+      "name": "0186.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0186.parquet",
+      "rows": 48736,
+      "bytes": 467742,
+      "sha256": "cfbf595a219855a41de39fa8ba4e52c1109f3e721a401392b4a3c0b8f35d0bbf"
+    },
+    {
+      "name": "0187.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0187.parquet",
+      "rows": 48405,
+      "bytes": 463868,
+      "sha256": "71b8b39f7545f72c6c50055fa7afe09542efd301734b09f6fd3de51fb1cfda7c"
+    },
+    {
+      "name": "0188.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0188.parquet",
+      "rows": 48996,
+      "bytes": 470069,
+      "sha256": "9ecb4937f065cf95aa4a945b9f099ecbbd189b41ebb9dcc766972adcb1dd4212"
+    },
+    {
+      "name": "0189.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0189.parquet",
+      "rows": 48416,
+      "bytes": 468423,
+      "sha256": "8c00cf195930b92566a48e4c04224de439e7fcb6ea1e6e9607a7029ead6cb779"
+    },
+    {
+      "name": "0190.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0190.parquet",
+      "rows": 46997,
+      "bytes": 453668,
+      "sha256": "2374b3a932f7c8d644818ed1f5227db1e962debdefc3f047b33f89649c6f1d02"
+    },
+    {
+      "name": "0191.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0191.parquet",
+      "rows": 48968,
+      "bytes": 468616,
+      "sha256": "bfeca1f42e3b58a67615fb6873c15af7e9d31a7850639c50de3765eb5c2c3421"
+    },
+    {
+      "name": "0192.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0192.parquet",
+      "rows": 49149,
+      "bytes": 470579,
+      "sha256": "ae7a9e8d32a783b213313855aeb4b6d13f5708c2b8011d27671d67d055053818"
+    },
+    {
+      "name": "0193.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0193.parquet",
+      "rows": 49416,
+      "bytes": 472257,
+      "sha256": "5c803e63b0ac02e5b541de33eeda4e926909a9555adee8d3884bc90e4dc18f33"
+    },
+    {
+      "name": "0194.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0194.parquet",
+      "rows": 48792,
+      "bytes": 465668,
+      "sha256": "60ff8a2774838e761021b3a55c35a76edf7c789e7f62c426b2df8d057f67f276"
+    },
+    {
+      "name": "0195.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0195.parquet",
+      "rows": 47858,
+      "bytes": 458367,
+      "sha256": "fd95dbbbdbb7fd70bb1c7c1664551e36ce764cbdc4a4aad26435f8ca8fcc8c8e"
+    },
+    {
+      "name": "0196.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0196.parquet",
+      "rows": 49172,
+      "bytes": 473902,
+      "sha256": "6de93246fdca83ae0ca23b72745956f326e21ef501f91c0f09067a8149b690ed"
+    },
+    {
+      "name": "0197.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0197.parquet",
+      "rows": 46724,
+      "bytes": 451521,
+      "sha256": "7d4156fe75a8706bf475a3ba911c3464cd1e7032558f7fd09ded8afe823064a4"
+    },
+    {
+      "name": "0198.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0198.parquet",
+      "rows": 49239,
+      "bytes": 469184,
+      "sha256": "0f631fa333bc257ac792f4a3a0e001f583883ba62a50bfaf82de538c51e3c15b"
+    },
+    {
+      "name": "0199.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0199.parquet",
+      "rows": 49090,
+      "bytes": 471304,
+      "sha256": "fb6aef148e74fbf85850aa6b6aa2a14d314b9e36e00a83defcbd515fd3feca85"
+    },
+    {
+      "name": "0200.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0200.parquet",
+      "rows": 48939,
+      "bytes": 466994,
+      "sha256": "34ce1cb8d6a947183d2dffe00e2e9883958c59470d80ecd7ee8b26e62763e7b4"
+    },
+    {
+      "name": "0201.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0201.parquet",
+      "rows": 47931,
+      "bytes": 459668,
+      "sha256": "2ec408dd6e8968de8afc64ed24448c568a21c9a5c5d844f9e155b51c3a053c62"
+    },
+    {
+      "name": "0202.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0202.parquet",
+      "rows": 48255,
+      "bytes": 463874,
+      "sha256": "6abe407e053e3810dec4920004119e191f8645f785ab59adfa3593abc31f5c0a"
+    },
+    {
+      "name": "0203.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0203.parquet",
+      "rows": 48309,
+      "bytes": 461805,
+      "sha256": "9cc0d82cbaf88a47c8a0ec20365b0c2bedf68336c28fed773ff0395dd6b51681"
+    },
+    {
+      "name": "0204.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0204.parquet",
+      "rows": 47197,
+      "bytes": 456272,
+      "sha256": "d88aaf64d2007c855ccb6eea140176d188ca998207d5a585eb5b573500b734eb"
+    },
+    {
+      "name": "0205.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0205.parquet",
+      "rows": 49016,
+      "bytes": 468820,
+      "sha256": "3902568ab1680f25f0a439837eacb2f4707a09b9da8c56d4a6cb5d5e6a47a322"
+    },
+    {
+      "name": "0206.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0206.parquet",
+      "rows": 49652,
+      "bytes": 473863,
+      "sha256": "a45a40aa161b32378d82719ec55d84c134d2124ae234e5464db7bfd1330cc41d"
+    },
+    {
+      "name": "0207.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0207.parquet",
+      "rows": 48958,
+      "bytes": 467028,
+      "sha256": "814281c762166cf8680b86ef32cae13d8bcd35210e6bcfb0eaabbfdc9a3eaf2d"
+    },
+    {
+      "name": "0208.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0208.parquet",
+      "rows": 48949,
+      "bytes": 467184,
+      "sha256": "3103de052e5f08c2e0afc93751a99de833744dd23f4cf66bbb549b8acd4dd200"
+    },
+    {
+      "name": "0209.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0209.parquet",
+      "rows": 48527,
+      "bytes": 465999,
+      "sha256": "e0583f861496d0b89b75b1d43b24eac3c30e40791c7cf36c6e989088a7d207b8"
+    },
+    {
+      "name": "0210.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0210.parquet",
+      "rows": 49058,
+      "bytes": 466712,
+      "sha256": "9b4f4fc72c63bc3853da0019e043cbb4300632059dec3e16acc32100aeb12a4b"
+    },
+    {
+      "name": "0211.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0211.parquet",
+      "rows": 47556,
+      "bytes": 454993,
+      "sha256": "de727480481b8f4e266236cf2f6b25fe0332e0f7113eb220d9064e48827c6978"
+    },
+    {
+      "name": "0212.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0212.parquet",
+      "rows": 49858,
+      "bytes": 473869,
+      "sha256": "2f87ff15f5ed1bd1a2e77044b38b806f0e5e543747935da80ac069e9a6cf4cb0"
+    },
+    {
+      "name": "0213.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0213.parquet",
+      "rows": 48846,
+      "bytes": 466596,
+      "sha256": "165638400d0d158840ccb856c5fc159a3877357d7c4d0756b067e77fa26a5075"
+    },
+    {
+      "name": "0214.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0214.parquet",
+      "rows": 50381,
+      "bytes": 478266,
+      "sha256": "f41e8a13ca50883ccc134437fd5bacc79ec63fa18263d48389a3de1ab12f9be8"
+    },
+    {
+      "name": "0215.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0215.parquet",
+      "rows": 49182,
+      "bytes": 471894,
+      "sha256": "9ac99b6c6b46c34b0347e0117ec0eeb39170580db9c3871b67bce47226c5b6ae"
+    },
+    {
+      "name": "0216.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0216.parquet",
+      "rows": 48637,
+      "bytes": 467332,
+      "sha256": "d3781d7fc51d59db8d2190a6aefc54cde559bef458d794b46b455706365040b2"
+    },
+    {
+      "name": "0217.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0217.parquet",
+      "rows": 48954,
+      "bytes": 470361,
+      "sha256": "53504822aa2e6755f3a6dda460d14b75d29ec4718c71c9a2fdb4ddf4e15a3520"
+    },
+    {
+      "name": "0218.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0218.parquet",
+      "rows": 46918,
+      "bytes": 454571,
+      "sha256": "ce318a36bf0541b89a2aa94b0d63e65a5e12a2ee48c553629e738aa89f569441"
+    },
+    {
+      "name": "0219.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0219.parquet",
+      "rows": 49562,
+      "bytes": 474862,
+      "sha256": "12ad9b278c6dd7464ea3d9eb19648e931d3c5daa3746f45ea9751abb6c91b89f"
+    },
+    {
+      "name": "0220.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0220.parquet",
+      "rows": 49699,
+      "bytes": 474353,
+      "sha256": "e3ecd311df05d49f33151792a8e07a7ac3f98077615bcb5dfb8b0a5395f5b381"
+    },
+    {
+      "name": "0221.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0221.parquet",
+      "rows": 49783,
+      "bytes": 478046,
+      "sha256": "dabd171c0832bcd2abfc5ae242fc3d913f5fc49b8a82353f62d86f6d1b3134d6"
+    },
+    {
+      "name": "0222.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0222.parquet",
+      "rows": 49067,
+      "bytes": 470453,
+      "sha256": "d471bea58eb633cf160643e63943e3feddfd5a2ab51e7e4b6a2862d6f5ded5f7"
+    },
+    {
+      "name": "0223.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0223.parquet",
+      "rows": 49514,
+      "bytes": 472675,
+      "sha256": "c6575905e412252c5409de49c2aa0dae18293fda5452fa934846c782af20ee9a"
+    },
+    {
+      "name": "0224.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0224.parquet",
+      "rows": 49709,
+      "bytes": 474510,
+      "sha256": "aaa458ef7774df1aaef588517e42aef3d436433c779bdb636433c704a4c71e3b"
+    },
+    {
+      "name": "0225.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0225.parquet",
+      "rows": 46887,
+      "bytes": 453046,
+      "sha256": "c24cfb190cfc70d853312c735ae26307f60ec4a52340e5cf3489b3ccffd9de17"
+    },
+    {
+      "name": "0226.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0226.parquet",
+      "rows": 49368,
+      "bytes": 471222,
+      "sha256": "ca864634c6a1117ab969264e435b448620e578dffdac613cd28f47f325b5b4bb"
+    },
+    {
+      "name": "0227.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0227.parquet",
+      "rows": 49527,
+      "bytes": 471484,
+      "sha256": "9e17dfe63a7facbc37ce8098f9ee4165fe209b216e562b0440a3bef69c3b9616"
+    },
+    {
+      "name": "0228.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0228.parquet",
+      "rows": 49282,
+      "bytes": 470390,
+      "sha256": "5a7b6a6bbccc71e40ce3858ba644bb8d3c323b3bee866ec55be087bc7a9056bd"
+    },
+    {
+      "name": "0229.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0229.parquet",
+      "rows": 49064,
+      "bytes": 472515,
+      "sha256": "594b19277eeb3184b728dcab4610e27e534575bd4d48ba0d1d625033f279b940"
+    },
+    {
+      "name": "0230.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0230.parquet",
+      "rows": 49006,
+      "bytes": 467522,
+      "sha256": "282c33e4fe75d557399683827a605a07ef281e1590acd4182ee81c9d6bcc168f"
+    },
+    {
+      "name": "0231.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0231.parquet",
+      "rows": 49338,
+      "bytes": 473619,
+      "sha256": "782a7072435ba7683f148ee2c59566cd78a0930cc532e8b835c88f2ccd397257"
+    },
+    {
+      "name": "0232.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0232.parquet",
+      "rows": 47085,
+      "bytes": 454272,
+      "sha256": "f422bf7ced82a8e0db37ccdde6d6c9d968c6988ace8c5a0211a372615a7b47e4"
+    },
+    {
+      "name": "0233.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0233.parquet",
+      "rows": 49606,
+      "bytes": 474471,
+      "sha256": "f85848493478065a8ae5e71b3de1f52c2ace241e11f8cd51ee49628a8dbc272f"
+    },
+    {
+      "name": "0234.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0234.parquet",
+      "rows": 48423,
+      "bytes": 467517,
+      "sha256": "f2aee5ba0ed2296ea5e00b0fe61c058c3d7e052419e017f1bb361526db78552f"
+    },
+    {
+      "name": "0235.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0235.parquet",
+      "rows": 49300,
+      "bytes": 472248,
+      "sha256": "363cf1e4c18d7453ae2571470e1c3a6ce19e5a28cdeb981e3591bc76f7e8d9e5"
+    },
+    {
+      "name": "0236.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0236.parquet",
+      "rows": 49167,
+      "bytes": 474381,
+      "sha256": "72b15155057f0574abd82a2661461546d038f554a8e28140c93cb9113809614f"
+    },
+    {
+      "name": "0237.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0237.parquet",
+      "rows": 49601,
+      "bytes": 476075,
+      "sha256": "7485a01cd3a92f378ab3ebcc67c672d472b7a532cbf4a55c7d039e585364adfd"
+    },
+    {
+      "name": "0238.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0238.parquet",
+      "rows": 49399,
+      "bytes": 474683,
+      "sha256": "24cbd2b3161c170945730d1482d07c997ee7a684c2292688181dc3c47f0804f2"
+    },
+    {
+      "name": "0239.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0239.parquet",
+      "rows": 46555,
+      "bytes": 453514,
+      "sha256": "28b9aa248858ad6bb304c79dd2b3837e1f16e7820585503201efe85a20ffa4a2"
+    },
+    {
+      "name": "0240.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0240.parquet",
+      "rows": 49596,
+      "bytes": 476989,
+      "sha256": "510c71d5e73e450dd4b606aea9e1692cda78a3eff5a127fc8cd381ca2f8634dd"
+    },
+    {
+      "name": "0241.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0241.parquet",
+      "rows": 49156,
+      "bytes": 473567,
+      "sha256": "a5acb4889891994d52ef6eba6a593b23c32d4c05f3aa218ce14b71e5a9da7145"
+    },
+    {
+      "name": "0242.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0242.parquet",
+      "rows": 49527,
+      "bytes": 472543,
+      "sha256": "e0f7c5b5142fb173b71c7298778b0c6d6f56230204f51008fdce41e688348815"
+    },
+    {
+      "name": "0243.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0243.parquet",
+      "rows": 49205,
+      "bytes": 473036,
+      "sha256": "923fdd2923958f53a0afe4b432f73d36740bc7558e68409ec5c8aa97ce30af6a"
+    },
+    {
+      "name": "0244.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0244.parquet",
+      "rows": 49079,
+      "bytes": 470523,
+      "sha256": "22ad9816cac8ec1bc8795210c100765d1f44916af6c1e0b108f6faeb0b24dc20"
+    },
+    {
+      "name": "0245.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0245.parquet",
+      "rows": 48369,
+      "bytes": 465338,
+      "sha256": "e7b1c1774c91a8dbc49e3c635b85fb43b9daef5c59b4d9932b39f0e545f83319"
+    },
+    {
+      "name": "0246.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0246.parquet",
+      "rows": 45829,
+      "bytes": 445225,
+      "sha256": "168264e64ba7f9de3a2de242564860669a9e5aa827a76674164383c85b2bf5d5"
+    },
+    {
+      "name": "0247.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0247.parquet",
+      "rows": 48310,
+      "bytes": 465296,
+      "sha256": "4f7e387aeb403444d1887824a710e47b816dbd483d64f36e409fd9dd3ec2b664"
+    },
+    {
+      "name": "0248.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0248.parquet",
+      "rows": 47777,
+      "bytes": 462508,
+      "sha256": "be03bba7dc7e961ffef20ec8ca4c2637c0656965cf2ca75a2844c105dc2a4124"
+    },
+    {
+      "name": "0249.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0249.parquet",
+      "rows": 48676,
+      "bytes": 469032,
+      "sha256": "1a0df5a3b35a6cd4cf549df22d30fe6cc49089e42ddc24b215ae98a9214c0f3c"
+    },
+    {
+      "name": "0250.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0250.parquet",
+      "rows": 49157,
+      "bytes": 475415,
+      "sha256": "f674f334f25dcad45422f9ec4746d085d853e65fb18e067f9ce1a62fe75d0de7"
+    },
+    {
+      "name": "0251.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0251.parquet",
+      "rows": 48981,
+      "bytes": 471758,
+      "sha256": "0af659aa52d7b59798d127bb7a6e5b9d4a1b4989d2346a3afa399de299c448cf"
+    },
+    {
+      "name": "0252.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0252.parquet",
+      "rows": 47938,
+      "bytes": 462308,
+      "sha256": "76dfc9232e79d8290706242b06dc5ccd73285d10005d36df1b12c32094b87bac"
+    },
+    {
+      "name": "0253.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0253.parquet",
+      "rows": 46717,
+      "bytes": 453091,
+      "sha256": "65909725e74c5692463e951f7878e2a330bd22acd028349c39bfbd80b9d3f3b7"
+    },
+    {
+      "name": "0254.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0254.parquet",
+      "rows": 49388,
+      "bytes": 474973,
+      "sha256": "c5b2e93ff876a7da12fb0d8ef5629cc0583a6550baeba4d2f0f5799d7de5f6f1"
+    },
+    {
+      "name": "0255.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0255.parquet",
+      "rows": 49229,
+      "bytes": 472367,
+      "sha256": "235dd60ee7218270af2dbe5d7203823b49d5a66e9d9d5daaa511b5b283b2b9ba"
+    },
+    {
+      "name": "0256.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0256.parquet",
+      "rows": 48804,
+      "bytes": 468608,
+      "sha256": "39dce8f391d4c69f80080597b4a80c611cd1f42530d726cff476b83d4ff3d774"
+    },
+    {
+      "name": "0257.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0257.parquet",
+      "rows": 49317,
+      "bytes": 475261,
+      "sha256": "df45489edda84941fd806f872bd3f043dc32c8617bbd96aaa466ba8be6e67e9d"
+    },
+    {
+      "name": "0258.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0258.parquet",
+      "rows": 48497,
+      "bytes": 470782,
+      "sha256": "e4318198fda170776aac8d501c19b46e928d25997bdddce7c5ba33cae1a86cbc"
+    },
+    {
+      "name": "0259.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0259.parquet",
+      "rows": 48886,
+      "bytes": 473913,
+      "sha256": "a84b1a391701088266f3c921c282d66c1ef0ecb909e62c38cbcdaa87678d544b"
+    },
+    {
+      "name": "0260.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0260.parquet",
+      "rows": 46655,
+      "bytes": 452907,
+      "sha256": "c7e843e3a6615c06929e0365a92b622074490866be2e0f9b8793b74e687a59d2"
+    },
+    {
+      "name": "0261.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0261.parquet",
+      "rows": 49439,
+      "bytes": 474562,
+      "sha256": "da919ee9bf76a306bdcffa29de5e17bf82e23ea9dad231e612d07bcb4cee7999"
+    },
+    {
+      "name": "0262.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0262.parquet",
+      "rows": 48707,
+      "bytes": 468685,
+      "sha256": "75e13843a9b467da55d58d65dbc54163d09f6f6737fe530d24f77b49e7c1ad82"
+    },
+    {
+      "name": "0263.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0263.parquet",
+      "rows": 48669,
+      "bytes": 469515,
+      "sha256": "31d33cad55a34166d3a60d45b1a7e72b1a17b5f71304ac24892ab2c9bed93c1a"
+    },
+    {
+      "name": "0264.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0264.parquet",
+      "rows": 48362,
+      "bytes": 467132,
+      "sha256": "f73fe75aa6320dcb3af9b3785e417171d2e867ff53f784cae21253c588f36f15"
+    },
+    {
+      "name": "0265.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0265.parquet",
+      "rows": 47307,
+      "bytes": 457395,
+      "sha256": "389fd5c93c84258d084e73856dc3543e5dd2ab853da3e8521277621d4681f6f5"
+    },
+    {
+      "name": "0266.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0266.parquet",
+      "rows": 48763,
+      "bytes": 470805,
+      "sha256": "018295ebf4c7881cec3a47f878e5958e7681b041c43af3a0fbe2b8b780e6106d"
+    },
+    {
+      "name": "0267.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0267.parquet",
+      "rows": 46766,
+      "bytes": 454993,
+      "sha256": "e39aa8df9d63e50a3c8bd8eaa761e0f3b478fe25872e72e7c7365d15b070ad5d"
+    },
+    {
+      "name": "0268.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0268.parquet",
+      "rows": 49354,
+      "bytes": 475262,
+      "sha256": "7407ae755e3cd5907b4ba63419c8768e2bfc2e456811a4ff1e1fed63a95d84b1"
+    },
+    {
+      "name": "0269.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0269.parquet",
+      "rows": 49686,
+      "bytes": 476341,
+      "sha256": "45ae45d77cea672eb16f44745f1937285c423ff25f36ac744ccd53e02472f1cc"
+    },
+    {
+      "name": "0270.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0270.parquet",
+      "rows": 49027,
+      "bytes": 471896,
+      "sha256": "ac21e6475364191f09e3e1c9cbf618701a417e2e4da62a74800b72f75786e09c"
+    },
+    {
+      "name": "0271.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0271.parquet",
+      "rows": 48862,
+      "bytes": 472648,
+      "sha256": "182dad7f64c8163590ae74d60004bcf86b2ef9528c5ab59c5ff3d72266211af4"
+    },
+    {
+      "name": "0272.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0272.parquet",
+      "rows": 49047,
+      "bytes": 469132,
+      "sha256": "55506d514338601aa240c0969692dc6cb72fa66ff2c91104f2329b7f3f209b37"
+    },
+    {
+      "name": "0273.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0273.parquet",
+      "rows": 49279,
+      "bytes": 475071,
+      "sha256": "52c6ad8abb042d1a7ecc77a9cb3ca9e2683a50f3bb9debcaf77a9c8c4b0b8ae5"
+    },
+    {
+      "name": "0274.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0274.parquet",
+      "rows": 47630,
+      "bytes": 458767,
+      "sha256": "2ecb7dc32361fb86454ad17937fcf3069bc7ce3ee61b21cf872ed686fe57dfb0"
+    },
+    {
+      "name": "0275.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0275.parquet",
+      "rows": 48478,
+      "bytes": 465955,
+      "sha256": "20c4578350be3842e178eb97df37b0304d31473da4615a0a7a8fe063d7ecb4c0"
+    },
+    {
+      "name": "0276.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0276.parquet",
+      "rows": 48910,
+      "bytes": 472631,
+      "sha256": "4100cedc6db70cf5987e35c5043307fb3c4d7657088aca378c5fecb42f41ae95"
+    },
+    {
+      "name": "0277.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0277.parquet",
+      "rows": 48488,
+      "bytes": 467893,
+      "sha256": "203548593c47d80487bd2b7c7bb238b8872cb089c0fb5de4783b6411cd6cc9ee"
+    },
+    {
+      "name": "0278.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0278.parquet",
+      "rows": 48731,
+      "bytes": 469817,
+      "sha256": "e71eadada09faa02ed200a24bd68004427ffe3b0a697ef9b9e854dd1a87501df"
+    },
+    {
+      "name": "0279.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0279.parquet",
+      "rows": 48650,
+      "bytes": 467071,
+      "sha256": "12b3104a0537960485fb42d7ab94afc19475a496e88f281dc277cd8065464580"
+    },
+    {
+      "name": "0280.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0280.parquet",
+      "rows": 48400,
+      "bytes": 467011,
+      "sha256": "3e890b0104135e2d83049f44c06a2bbfd84327737bd7ee66bc30d5ce31b6d237"
+    },
+    {
+      "name": "0281.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0281.parquet",
+      "rows": 47084,
+      "bytes": 456124,
+      "sha256": "32d004ed3e2cdad67357cb551a9bc8dc54fd7c3deec61c0f26e529666222efe0"
+    },
+    {
+      "name": "0282.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0282.parquet",
+      "rows": 49223,
+      "bytes": 473659,
+      "sha256": "f1180c3f7c375c36bb5eab5f01b89f296dd46884ce123f3f4d649f4b9c24373f"
+    },
+    {
+      "name": "0283.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0283.parquet",
+      "rows": 48942,
+      "bytes": 469820,
+      "sha256": "7103c3d2e1f701b26b7866238c62abd6ffa5a9de773172e6d6947aef6be1667c"
+    },
+    {
+      "name": "0284.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0284.parquet",
+      "rows": 48174,
+      "bytes": 466184,
+      "sha256": "6d195c3c7ccf461ebaf0001efbecf5d5445f4a4c8f69635509ae0f8f0046d9bd"
+    },
+    {
+      "name": "0285.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0285.parquet",
+      "rows": 49450,
+      "bytes": 474690,
+      "sha256": "26582c31b1cdca5d78d56a159bb49bb7145fac65dcea2d43d60164b0f847b17c"
+    },
+    {
+      "name": "0286.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0286.parquet",
+      "rows": 48657,
+      "bytes": 467392,
+      "sha256": "630177dff004309146f9273e13a319e12d0175a27c1fcb69e5a980b87baf95d8"
+    },
+    {
+      "name": "0287.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0287.parquet",
+      "rows": 48413,
+      "bytes": 468598,
+      "sha256": "27fce60b60e8c26a7dc7371b40441049c05867c8c97dd35bf3539b9eb449a0ca"
+    },
+    {
+      "name": "0288.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0288.parquet",
+      "rows": 46038,
+      "bytes": 446665,
+      "sha256": "2a9df62d9fb17c24503d4c4751a54071937c303d92b70920b2131f1ed7ef116b"
+    },
+    {
+      "name": "0289.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0289.parquet",
+      "rows": 48714,
+      "bytes": 469358,
+      "sha256": "bd4c25c386020447758cdf18821ed6f268babb9c4518cc24887991240a810f06"
+    },
+    {
+      "name": "0290.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0290.parquet",
+      "rows": 47804,
+      "bytes": 460220,
+      "sha256": "90eabd92b34432596455080ed13d64493b82df66a4a8c4057cedbf164c25faff"
+    },
+    {
+      "name": "0291.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0291.parquet",
+      "rows": 48268,
+      "bytes": 465049,
+      "sha256": "800f62d692db1afe48b88b5cc987f44399bc93b200885adfd38b79c2898a0018"
+    },
+    {
+      "name": "0292.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0292.parquet",
+      "rows": 48080,
+      "bytes": 464079,
+      "sha256": "9748e37b7e730c151c894340e2ad61e8be6a73bb8cce393ab1e1f21d6eef0827"
+    },
+    {
+      "name": "0293.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0293.parquet",
+      "rows": 48180,
+      "bytes": 467968,
+      "sha256": "8fdbe816586e34ced4a94badf48d909d58a00b9aa0a6efcd0729fcb6da17c296"
+    },
+    {
+      "name": "0294.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0294.parquet",
+      "rows": 48394,
+      "bytes": 469389,
+      "sha256": "4a962dbf98c8441378b8bb37e0a34da54a4d00486fa2c16339b21db995f51d1d"
+    },
+    {
+      "name": "0295.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0295.parquet",
+      "rows": 45697,
+      "bytes": 447183,
+      "sha256": "fc9d4ff80eeb01b6cf37b3a30aeacb62714d9fcb1760cb750a372f3f34921eaf"
+    },
+    {
+      "name": "0296.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0296.parquet",
+      "rows": 47667,
+      "bytes": 462582,
+      "sha256": "fd60ebd8634d2c530c198beaa32d04677937041453f98ca27de478d18abd9bab"
+    },
+    {
+      "name": "0297.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0297.parquet",
+      "rows": 47393,
+      "bytes": 458906,
+      "sha256": "10002e8154af87d5d0310f5bfbed6eac054c5d7e6d2af5b347628924bd77813a"
+    },
+    {
+      "name": "0298.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0298.parquet",
+      "rows": 47077,
+      "bytes": 455913,
+      "sha256": "5331c10d65103f90dbffab794000c6456ec97a6cb7940f2df058b54ca866dc15"
+    },
+    {
+      "name": "0299.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0299.parquet",
+      "rows": 46676,
+      "bytes": 454625,
+      "sha256": "0d3b2dfab256dbca0988c5f711d2ec9b9d6d0de6d40b61a67e7dda2225fe60d8"
+    },
+    {
+      "name": "0300.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0300.parquet",
+      "rows": 46886,
+      "bytes": 453872,
+      "sha256": "de05b6e5b852456c04c9e210156b6b9b9b6768020e4d27232606d61249ce02a4"
+    },
+    {
+      "name": "0301.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0301.parquet",
+      "rows": 46413,
+      "bytes": 453732,
+      "sha256": "02475ea84c23974c6c66bfe41ca619744492f6a9e03d89639b0264a237c21780"
+    },
+    {
+      "name": "0302.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0302.parquet",
+      "rows": 44899,
+      "bytes": 439584,
+      "sha256": "bf86f8525f7059ca5d1a2c8ca5eca365eb3fcd2b37a5ededb78ea644a3751281"
+    },
+    {
+      "name": "0303.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0303.parquet",
+      "rows": 46572,
+      "bytes": 449773,
+      "sha256": "ad22aa88abdddfc70e9f73e7fdd4fe0afd96d821a94a744ec50482c36972bbf2"
+    },
+    {
+      "name": "0304.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0304.parquet",
+      "rows": 47003,
+      "bytes": 455128,
+      "sha256": "8e19b2e34149d5dd28779626f58a849a2bc06b5cdc4e0dd8be1be5524c181dfc"
+    },
+    {
+      "name": "0305.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0305.parquet",
+      "rows": 46476,
+      "bytes": 451692,
+      "sha256": "5639ee230154507dd44b13458f3d1d3cec9cc30c17d010f0c5ec3ac267e62c49"
+    },
+    {
+      "name": "0306.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0306.parquet",
+      "rows": 46071,
+      "bytes": 448589,
+      "sha256": "c38126d2094e0f72f750290604154563aeff6f8076c3ef3c6df57ee621840f5a"
+    },
+    {
+      "name": "0307.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0307.parquet",
+      "rows": 46136,
+      "bytes": 447271,
+      "sha256": "e946299603e5697e5e0687043bd71ab8d85e1634a1c819160cb8ece263118a5f"
+    },
+    {
+      "name": "0308.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0308.parquet",
+      "rows": 46052,
+      "bytes": 450347,
+      "sha256": "afdd99e380c41e1fb784e37f4cdcfb5956a082afad243b7dc19447c4f063397c"
+    },
+    {
+      "name": "0309.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0309.parquet",
+      "rows": 44217,
+      "bytes": 433658,
+      "sha256": "530d71e6caa929ce64df02de3ed25286be12be17b47fd5451bc844c67294f66b"
+    },
+    {
+      "name": "0310.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0310.parquet",
+      "rows": 46331,
+      "bytes": 451538,
+      "sha256": "02437e6c89276e234774dce8cfd13057f783a9dc18567eb62f2dc31d036e466e"
+    },
+    {
+      "name": "0311.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0311.parquet",
+      "rows": 46992,
+      "bytes": 458404,
+      "sha256": "8639cfceb194e47c679077d9db90575b028c8ce282e89eb4c407db897f253ef2"
+    },
+    {
+      "name": "0312.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0312.parquet",
+      "rows": 47019,
+      "bytes": 454877,
+      "sha256": "b32fde6e86dd7f0cf68edbf9a0385719040a8ffec1162bc7b5590ce2c140f9b6"
+    },
+    {
+      "name": "0313.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0313.parquet",
+      "rows": 47704,
+      "bytes": 462589,
+      "sha256": "3446109978db987314ec3a69e2eef5c4636bc4c65078f80ee1fe6cd8d8acbb4f"
+    },
+    {
+      "name": "0314.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0314.parquet",
+      "rows": 46427,
+      "bytes": 453665,
+      "sha256": "96158a819aa7a653089f3b25c1b70104525197dfda5940a6fd37c1f5baf15b1c"
+    },
+    {
+      "name": "0315.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0315.parquet",
+      "rows": 45399,
+      "bytes": 446712,
+      "sha256": "9a04ff696003bce063c2a96e88248a95660157864942867ad09529258d6cfb8d"
+    },
+    {
+      "name": "0316.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0316.parquet",
+      "rows": 44588,
+      "bytes": 437363,
+      "sha256": "d529cbef1f742e5ede169fdb2495dd8de68b5cdcd68d29183875a5383591e8c2"
+    },
+    {
+      "name": "0317.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0317.parquet",
+      "rows": 46608,
+      "bytes": 452770,
+      "sha256": "b9a2338e0ddbf58c4fb2844d65f12d38795e272d2e2adc017908a358ba76296c"
+    },
+    {
+      "name": "0318.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0318.parquet",
+      "rows": 46426,
+      "bytes": 453434,
+      "sha256": "5ae0e9aae5e6746faeb79290a37e68080ff9ea54a289d558082a25660f130653"
+    },
+    {
+      "name": "0319.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0319.parquet",
+      "rows": 46108,
+      "bytes": 450475,
+      "sha256": "c48630894c5ca17a7859dbc6665b7bc40186a849808040b7ea2e08b4000d10a7"
+    },
+    {
+      "name": "0320.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0320.parquet",
+      "rows": 46369,
+      "bytes": 455007,
+      "sha256": "2318ade7e60f989a3e3d398bf74d46c71a9037be97316359b1debd937514049d"
+    },
+    {
+      "name": "0321.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0321.parquet",
+      "rows": 45588,
+      "bytes": 445863,
+      "sha256": "53e85a3645361d984a21fe7d270efe2df63b9a801bd4fb3e14be5ac7c9e59db1"
+    },
+    {
+      "name": "0322.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0322.parquet",
+      "rows": 45812,
+      "bytes": 449231,
+      "sha256": "dc56c956e49010b5ef7ede3b53d55a2ee254d3112dd7b270211121b4ac04bdab"
+    },
+    {
+      "name": "0323.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0323.parquet",
+      "rows": 43169,
+      "bytes": 427588,
+      "sha256": "d77f4db765ecc2212c52ec5a9c4d912032f8c1b5c5cc34182b9e23441614bab6"
+    },
+    {
+      "name": "0324.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0324.parquet",
+      "rows": 45921,
+      "bytes": 449749,
+      "sha256": "3e14e44d751bffe0b6dde2dab7ddf49daee87109977e4fa4dc94ae05de873930"
+    },
+    {
+      "name": "0325.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0325.parquet",
+      "rows": 45501,
+      "bytes": 444138,
+      "sha256": "57f97b3a5bd90812a8c4a3c1954457ebb45418a05477b5d940dd76e17194b608"
+    },
+    {
+      "name": "0326.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0326.parquet",
+      "rows": 45637,
+      "bytes": 447867,
+      "sha256": "acea1c0f4f9a1e3bd726ea352d644c04f053245be830f62ddb2dea9aff6bbf67"
+    },
+    {
+      "name": "0327.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0327.parquet",
+      "rows": 43469,
+      "bytes": 429644,
+      "sha256": "486690696c8bf8b7b118e07df5f28213fa156c085795c47621837c3ab7610e4f"
+    },
+    {
+      "name": "0328.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0328.parquet",
+      "rows": 43587,
+      "bytes": 431541,
+      "sha256": "7a0cc7de80fb176441062d181ecb5d415f3c559996a68f53cdd32c869ce342cb"
+    },
+    {
+      "name": "0329.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0329.parquet",
+      "rows": 44139,
+      "bytes": 434068,
+      "sha256": "030158232146cfe43cb46104e324e64185000cfce90ea3ee87e042e59dd9ce03"
+    },
+    {
+      "name": "0330.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0330.parquet",
+      "rows": 42310,
+      "bytes": 417000,
+      "sha256": "fdb6984dd0fda72305d544a21d4a7328dfbd4db9492bce6ffaac7ae456b4ac23"
+    },
+    {
+      "name": "0331.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0331.parquet",
+      "rows": 44549,
+      "bytes": 437846,
+      "sha256": "0fb94477159eb0c01e7d34f901ad0bb9db1a5d257ac4aa360fd4bd948936c3b1"
+    },
+    {
+      "name": "0332.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0332.parquet",
+      "rows": 44135,
+      "bytes": 436734,
+      "sha256": "6d44b6da91a54006915bdd56521cbec9607a72e6a9ef2763438f99d9842dcfcc"
+    },
+    {
+      "name": "0333.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0333.parquet",
+      "rows": 44560,
+      "bytes": 441601,
+      "sha256": "499dfc2fe7137da62aa5905d0c9bafd5beb093819c4091de2cffcc1169588cf6"
+    },
+    {
+      "name": "0334.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0334.parquet",
+      "rows": 45067,
+      "bytes": 442922,
+      "sha256": "2c1b1e991ea05e81f47b4395f764e8153a521deb53cde9bb849fb2656ec252fa"
+    },
+    {
+      "name": "0335.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0335.parquet",
+      "rows": 43799,
+      "bytes": 434327,
+      "sha256": "ed26b7c44dac4527135115ed1d058488c4cf4732fd8e15fc85b0fb519f006be3"
+    },
+    {
+      "name": "0336.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0336.parquet",
+      "rows": 44553,
+      "bytes": 439886,
+      "sha256": "366c99165691d3242fd7afc3d25e22848a76b7675b7ec9b6297678df9fd17c7f"
+    },
+    {
+      "name": "0337.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0337.parquet",
+      "rows": 42670,
+      "bytes": 423165,
+      "sha256": "a46c980e51e30b2b5cf2649275df995ec5ec8e2dec1b8ff7011e86ff2b11d7bb"
+    },
+    {
+      "name": "0338.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0338.parquet",
+      "rows": 44594,
+      "bytes": 440495,
+      "sha256": "87b00111ec5f203106f99b1c35ac48b18b8d71fff13bd708f77cdbf73893302a"
+    },
+    {
+      "name": "0339.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0339.parquet",
+      "rows": 44833,
+      "bytes": 439922,
+      "sha256": "a481488d09cec9199183f2eb12447fff74fb493d4e7072bdb42d1fb54d9cd7e8"
+    },
+    {
+      "name": "0340.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0340.parquet",
+      "rows": 44264,
+      "bytes": 437168,
+      "sha256": "0a930d8532a8ae91b054356ec0ef75d8345ef501a61320fa52df502b5b00a4be"
+    },
+    {
+      "name": "0341.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0341.parquet",
+      "rows": 44742,
+      "bytes": 440214,
+      "sha256": "def81377ffcfbed2badcfedfae13adc02ab389d13480375cf2367aaaecb27ffe"
+    },
+    {
+      "name": "0342.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0342.parquet",
+      "rows": 45846,
+      "bytes": 449850,
+      "sha256": "556f326cb2798b849ad4fa0ad74f058814d7c571aa7d7f6db5fd038dc5b90d2e"
+    },
+    {
+      "name": "0343.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0343.parquet",
+      "rows": 45391,
+      "bytes": 445753,
+      "sha256": "0cb8003cb71c19c95ab1e5028a49a666464216934488b88f4fa186bf01558cb9"
+    },
+    {
+      "name": "0344.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0344.parquet",
+      "rows": 43215,
+      "bytes": 426304,
+      "sha256": "c0801693436d5ff13ffedc25176036584d2b4b6b2f2f88087dbd35042c1e0f50"
+    },
+    {
+      "name": "0345.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0345.parquet",
+      "rows": 44769,
+      "bytes": 439925,
+      "sha256": "43c42774402e846dd88cd7f3e759e6925d38d3e9f9feda225d23955d100a905c"
+    },
+    {
+      "name": "0346.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0346.parquet",
+      "rows": 44401,
+      "bytes": 436205,
+      "sha256": "d8cdf92d5bec2268c466e7b3775c41eed192159232ad20679db6b2a9f4c249fa"
+    },
+    {
+      "name": "0347.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0347.parquet",
+      "rows": 44590,
+      "bytes": 436859,
+      "sha256": "85eb4eeb272589fcece86620bfaae026af2c16fbe2375dc6ff561aed03b35373"
+    },
+    {
+      "name": "0348.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0348.parquet",
+      "rows": 44434,
+      "bytes": 440014,
+      "sha256": "0840d57bb3bae7546313e4f5b8d7670d4f1cd42eaa4e0479c95daa7b0410f76f"
+    },
+    {
+      "name": "0349.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0349.parquet",
+      "rows": 44703,
+      "bytes": 440317,
+      "sha256": "b95d444bea7393f96bea309e9c46d08856d7cafc7d8b645c7f7c1a1a32a416b5"
+    },
+    {
+      "name": "0350.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0350.parquet",
+      "rows": 44345,
+      "bytes": 440695,
+      "sha256": "fdac48e651dfbd3b4c3e78d6584fddb6cd7e94fc1a8958ec4178107afedf5575"
+    },
+    {
+      "name": "0351.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0351.parquet",
+      "rows": 42796,
+      "bytes": 425042,
+      "sha256": "850c5a727c3c15911b3faded0d12b6fce154261f0885469973cf5d7bcf76ef81"
+    },
+    {
+      "name": "0352.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0352.parquet",
+      "rows": 44817,
+      "bytes": 440259,
+      "sha256": "0edaf3dd81b4ba3edf7caffa97a0d19fdc212ee36a17a4ed4136f96757123595"
+    },
+    {
+      "name": "0353.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0353.parquet",
+      "rows": 44171,
+      "bytes": 435235,
+      "sha256": "bc71dc8cb9605e9553200f1cecf635e8454f9e2f6755151aefed41f8e355d907"
+    },
+    {
+      "name": "0354.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0354.parquet",
+      "rows": 44358,
+      "bytes": 436158,
+      "sha256": "c0c6847a474b9bfc819245691e420d93d7d04ba49ff9377fb0fd36025a618cff"
+    },
+    {
+      "name": "0355.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0355.parquet",
+      "rows": 44275,
+      "bytes": 436004,
+      "sha256": "957beeb3f18d2b2912fb82e58c274bafee38f9005f3d2c43446ce155356057b1"
+    },
+    {
+      "name": "0356.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0356.parquet",
+      "rows": 44247,
+      "bytes": 433927,
+      "sha256": "d6e20169162f9cca053cdd9d73a3aa03a750d0c17d60f17f5b131e6890831f06"
+    },
+    {
+      "name": "0357.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0357.parquet",
+      "rows": 43722,
+      "bytes": 434478,
+      "sha256": "c0d01dc7485b079ec3f71a81aa279f6d39cf5fd570277dd1eaf17f3d410f9e44"
+    },
+    {
+      "name": "0358.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0358.parquet",
+      "rows": 43855,
+      "bytes": 430396,
+      "sha256": "53c4650e31577afcaf5ce5d17bb3f1bfc051e026ece1b517b4a3c688cd12944a"
+    },
+    {
+      "name": "0359.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0359.parquet",
+      "rows": 45750,
+      "bytes": 450231,
+      "sha256": "8251269af212fdccf806227911495e7ca73cf853cb2c3d0066ac23a22706de9c"
+    },
+    {
+      "name": "0360.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0360.parquet",
+      "rows": 44882,
+      "bytes": 441332,
+      "sha256": "c6db3dd0ffd41e75bdcfc392cbdcb4686bca92a62afed09f5432a627e022f0d9"
+    },
+    {
+      "name": "0361.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0361.parquet",
+      "rows": 45648,
+      "bytes": 449083,
+      "sha256": "2db4e01f31ac9b90cb782070c71a211b6d1ab109594916aaacec0a9d2d8bcc3b"
+    },
+    {
+      "name": "0362.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0362.parquet",
+      "rows": 45400,
+      "bytes": 447301,
+      "sha256": "e1a004e4fb28c51e9ababce87797f33b76d5a447fc6a9d24a5330fbf5e32a9eb"
+    },
+    {
+      "name": "0363.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0363.parquet",
+      "rows": 45657,
+      "bytes": 449006,
+      "sha256": "f23de064bcc16509c393c9d9b02cb1179ad890b182d2a410ca9a03d9c303396b"
+    },
+    {
+      "name": "0364.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0364.parquet",
+      "rows": 45726,
+      "bytes": 449508,
+      "sha256": "96b062bb93d725290b674ae1801162a3ff6d488e9c9f6e22eaa95f674c6623fb"
+    },
+    {
+      "name": "0365.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0365.parquet",
+      "rows": 13887,
+      "bytes": 153524,
+      "sha256": "8498455400450383b9a5108ea309fe692a11f58274ce5173707a824cad440348"
+    },
+    {
+      "name": "0366.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0366.parquet",
+      "rows": 2602,
+      "bytes": 43558,
+      "sha256": "3757b3cabf96fa9d249a0c1d18ca5a0c8bb18a30b7ed51ff2488fc105e093b2c"
+    },
+    {
+      "name": "0367.parquet",
+      "path": "C:\\Users\\guruu\\OneDrive\\Desktop\\BDA Mini Project\\railway-delay-intelligence\\bigdata\\data\\raw\\2025-02-08_2026-02-07\\0367.parquet",
+      "rows": 118,
+      "bytes": 7629,
+      "sha256": "64a24d1b04418234ba569c225651c531801a454afb86779b2400b83c0e5c8bef"
+    }
+  ]
+}

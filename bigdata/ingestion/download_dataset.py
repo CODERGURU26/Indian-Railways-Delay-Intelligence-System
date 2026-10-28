@@ -7,6 +7,7 @@ import os
 import tempfile
 import urllib.parse
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -74,10 +75,7 @@ def import_dataset(config: str) -> dict:
     expected_rows = int(config_size["num_rows"])
 
     output_dir = RAW_DIR / config
-    files = []
-    total_rows = 0
-    total_bytes = 0
-    for shard in sorted(shards, key=lambda item: item["filename"]):
+    def fetch_shard(shard: dict) -> dict:
         source_name = shard["filename"]
         target = output_dir / source_name
         if not target.is_file() or target.stat().st_size != int(shard["size"]):
@@ -89,15 +87,26 @@ def import_dataset(config: str) -> dict:
                 f"expected {shard['size']} bytes, got {actual_bytes}"
             )
         rows = pq.read_metadata(target).num_rows
-        total_rows += rows
-        total_bytes += actual_bytes
-        files.append({
+        return {
             "name": source_name,
             "path": str(target),
             "rows": rows,
             "bytes": actual_bytes,
             "sha256": sha256_file(target),
-        })
+        }
+
+    files = []
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        futures = {
+            executor.submit(fetch_shard, shard): shard["filename"]
+            for shard in sorted(shards, key=lambda item: item["filename"])
+        }
+        for future in as_completed(futures):
+            files.append(future.result())
+            print(f"Verified {len(files)}/{len(shards)} shards", flush=True)
+    files.sort(key=lambda item: item["name"])
+    total_rows = sum(item["rows"] for item in files)
+    total_bytes = sum(item["bytes"] for item in files)
 
     if total_rows != expected_rows:
         raise RuntimeError(
@@ -119,6 +128,8 @@ def import_dataset(config: str) -> dict:
         "files": files,
     }
     MANIFEST_PATH.parent.mkdir(parents=True, exist_ok=True)
+    per_config_manifest = MANIFEST_PATH.parent / f"manifest_{config}.json"
+    per_config_manifest.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     MANIFEST_PATH.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     return manifest
 

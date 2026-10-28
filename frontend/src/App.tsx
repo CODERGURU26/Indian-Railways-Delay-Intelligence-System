@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import {
-  BarChart,
   Bar,
+  BarChart,
   CartesianGrid,
+  Cell,
+  Legend,
   Line,
   LineChart,
   Pie,
@@ -11,16 +13,17 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-  Cell,
 } from 'recharts';
 
-const API_URL = (import.meta as ImportMeta & { env?: { VITE_API_BASE_URL?: string } }).env?.VITE_API_BASE_URL || 'http://localhost:8000';
+const API_URL = (import.meta as ImportMeta & { env?: { VITE_API_BASE_URL?: string } }).env?.VITE_API_BASE_URL || 'http://127.0.0.1:8001';
 
 type SummaryRow = {
   label: string;
   value: number | null;
   departure_value?: number | null;
   count?: number;
+  departure_count?: number;
+  percentage?: number;
 };
 
 type AnalyticsPayload = {
@@ -31,15 +34,41 @@ type AnalyticsPayload = {
   statuses: SummaryRow[];
   routes: SummaryRow[];
   sequence: SummaryRow[];
-  coverage: Record<string, number>;
+  delay_distribution: SummaryRow[];
+  coverage: {
+    arrival_reported_pct: number | null;
+    departure_reported_pct: number | null;
+    run_quality_avg: number | null;
+  };
+  kpis: {
+    mean_arrival_delay_min: number | null;
+    mean_departure_delay_min: number | null;
+    severe_arrival_pct: number;
+    cancelled_journeys_pct: number;
+  };
+  insights: { title: string; value: string; detail: string }[];
+  quality: Record<string, string | number | null>;
   totals: {
     records: number;
     trains: number;
     stations: number;
     journeys: number;
+    start_date: string | null;
+    end_date: string | null;
   };
   data_source: string;
 };
+
+const STATUS_COLORS = ['#22c55e', '#f59e0b', '#ef4444', '#3b82f6', '#a78bfa', '#14b8a6'];
+const DELAY_COLORS: Record<string, string> = {
+  'Early or on time': '#22c55e',
+  '1-15 min': '#38bdf8',
+  '16-60 min': '#f59e0b',
+  'Over 60 min': '#ef4444',
+};
+
+const number = (value: number | null | undefined, digits = 2) =>
+  value == null ? 'N/A' : value.toLocaleString(undefined, { maximumFractionDigits: digits });
 
 export default function App() {
   const [data, setData] = useState<AnalyticsPayload | null>(null);
@@ -52,8 +81,7 @@ export default function App() {
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}`);
         }
-        const payload = await response.json();
-        setData(payload);
+        setData(await response.json());
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Unable to load dashboard data');
       }
@@ -67,110 +95,89 @@ export default function App() {
   }
 
   if (!data) {
-    return <div className="loading">Loading railway delay metrics...</div>;
+    return <div className="loading">Loading one-year railway delay analysis...</div>;
   }
 
   return (
     <div className="app-shell">
       <header className="app-header">
         <h1>Indian Railways Delay Intelligence</h1>
-        <p>Station-level delay and route quality monitoring.</p>
+        <p>One-year delay analysis · {data.totals.start_date} to {data.totals.end_date}</p>
         <p className="data-source">Data source: {data.data_source}</p>
         <p className="chart-caption">
-          Delay averages use the source values as recorded; extreme delays are not clipped or excluded.
+          All source rows are retained. Blank fields are normalized; missing delays are excluded from delay averages.
+          Extreme delay values are not clipped.
         </p>
       </header>
 
       <section className="stats-grid">
-        <div className="card">
-          <span>Stop records</span>
-          <strong>{data.totals.records.toLocaleString()}</strong>
-        </div>
-        <div className="card">
-          <span>Unique trains</span>
-          <strong>{data.totals.trains.toLocaleString()}</strong>
-        </div>
-        <div className="card">
-          <span>Unique stations</span>
-          <strong>{data.totals.stations.toLocaleString()}</strong>
-        </div>
-        <div className="card">
-          <span>Train journeys</span>
-          <strong>{data.totals.journeys.toLocaleString()}</strong>
-        </div>
-        <div className="card">
-          <span>Reported arrival coverage</span>
-          <strong>{data.coverage.reported ?? 0}%</strong>
-        </div>
-        <div className="card">
-          <span>Reported departure coverage</span>
-          <strong>{data.coverage.departure_reported_pct ?? 0}%</strong>
-        </div>
-        <div className="card">
-          <span>Run quality avg</span>
-          <strong>{data.coverage.run_quality_avg ?? 0}</strong>
-        </div>
+        <div className="card"><span>Stop records</span><strong>{data.totals.records.toLocaleString()}</strong></div>
+        <div className="card"><span>Train journeys</span><strong>{data.totals.journeys.toLocaleString()}</strong></div>
+        <div className="card"><span>Unique trains</span><strong>{data.totals.trains.toLocaleString()}</strong></div>
+        <div className="card"><span>Unique stations</span><strong>{data.totals.stations.toLocaleString()}</strong></div>
+        <div className="card"><span>Mean arrival delay / journey</span><strong>{number(data.kpis.mean_arrival_delay_min)} min</strong></div>
+        <div className="card"><span>Mean departure delay / journey</span><strong>{number(data.kpis.mean_departure_delay_min)} min</strong></div>
+        <div className="card"><span>Arrivals over 60 min late</span><strong>{number(data.kpis.severe_arrival_pct)}%</strong></div>
+        <div className="card"><span>Cancelled journeys</span><strong>{number(data.kpis.cancelled_journeys_pct)}%</strong></div>
       </section>
 
       <section className="charts-grid">
         <div className="panel chart-panel">
-          <h2>Top 10 train delays</h2>
-          <p className="chart-caption">
-            Average arrival delay · showing {Math.min(data.trains.length, 10)} unique trains
-            {data.trains.length < 8 ? ' · import more data to reach 8 trains' : ''}
-          </p>
-          <ResponsiveContainer width="100%" height={Math.max(340, data.trains.length * 38)}>
-            <BarChart data={data.trains.slice(0, 10)} layout="vertical" margin={{ left: 12, right: 24 }}>
+          <h2>Highest-delay trains</h2>
+          <p className="chart-caption">Average arrival delay per journey · only trains with at least 10 journeys</p>
+          <ResponsiveContainer width="100%" height={380}>
+            <BarChart data={data.trains} layout="vertical" margin={{ left: 12, right: 24 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis type="number" unit=" min" />
               <YAxis type="category" dataKey="label" width={76} />
-              <Tooltip formatter={(value) => [`${value} min`, 'Average arrival delay']} />
+              <Tooltip formatter={(value) => [`${number(Number(value))} min`, 'Mean arrival delay']} />
               <Bar dataKey="value" fill="#ef4444" barSize={20} />
             </BarChart>
           </ResponsiveContainer>
         </div>
 
         <div className="panel chart-panel">
-          <h2>Top 10 station delays</h2>
-          <p className="chart-caption">
-            Average arrival and departure delay · showing {Math.min(data.stations.length, 10)} unique stations
-            {data.stations.length < 8 ? ' · import more data to reach 8 stations' : ''}
-          </p>
-          <ResponsiveContainer width="100%" height={Math.max(340, data.stations.length * 38)}>
-            <BarChart data={data.stations.slice(0, 10)} layout="vertical" margin={{ left: 12, right: 24 }}>
+          <h2>Highest-delay stations</h2>
+          <p className="chart-caption">Stop-level arrival and departure averages · at least 100 observations per station</p>
+          <ResponsiveContainer width="100%" height={380}>
+            <BarChart data={data.stations} layout="vertical" margin={{ left: 12, right: 24 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis type="number" unit=" min" />
               <YAxis type="category" dataKey="label" width={76} />
-              <Tooltip formatter={(value) => [`${value ?? 'N/A'} min`]} />
-              <Bar dataKey="value" name="Arrival" fill="#3b82f6" barSize={16} />
-              <Bar dataKey="departure_value" name="Departure" fill="#22c55e" barSize={16} />
+              <Tooltip formatter={(value) => [`${number(Number(value))} min`]} />
+              <Legend />
+              <Bar dataKey="value" name="Arrival" fill="#3b82f6" barSize={14} />
+              <Bar dataKey="departure_value" name="Departure" fill="#22c55e" barSize={14} />
             </BarChart>
           </ResponsiveContainer>
         </div>
 
         <div className="panel chart-panel chart-panel-wide">
           <h2>Monthly delay trend</h2>
-          <p className="chart-caption">Average station arrival and departure delay by journey start month</p>
+          <p className="chart-caption">Journey-weighted mean station delay · each journey counts equally within its start month</p>
           <ResponsiveContainer width="100%" height={380}>
             <LineChart data={data.monthly_trends} margin={{ top: 12, right: 24, bottom: 8, left: 8 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="label" />
               <YAxis unit=" min" />
-              <Tooltip formatter={(value) => [`${value ?? 'N/A'} min`]} />
-              <Line type="monotone" dataKey="value" name="Arrival" stroke="#f97316" strokeWidth={3} />
-              <Line type="monotone" dataKey="departure_value" name="Departure" stroke="#14b8a6" strokeWidth={3} />
+              <Tooltip formatter={(value) => [`${number(Number(value))} min`]} />
+              <Legend />
+              <Line type="monotone" dataKey="value" name="Arrival" stroke="#f97316" strokeWidth={3} dot={{ r: 4 }} connectNulls />
+              <Line type="monotone" dataKey="departure_value" name="Departure" stroke="#14b8a6" strokeWidth={3} dot={{ r: 4 }} connectNulls />
             </LineChart>
           </ResponsiveContainer>
         </div>
 
         <div className="panel chart-panel">
-          <h2>Category delay averages</h2>
-          <ResponsiveContainer width="100%" height={260}>
+          <h2>Delay by train category</h2>
+          <p className="chart-caption">Journey-weighted average delays by source category</p>
+          <ResponsiveContainer width="100%" height={320}>
             <BarChart data={data.categories}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="label" />
               <YAxis unit=" min" />
-              <Tooltip />
+              <Tooltip formatter={(value) => [`${number(Number(value))} min`]} />
+              <Legend />
               <Bar dataKey="value" name="Arrival" fill="#a78bfa" />
               <Bar dataKey="departure_value" name="Departure" fill="#f59e0b" />
             </BarChart>
@@ -178,29 +185,51 @@ export default function App() {
         </div>
 
         <div className="panel chart-panel">
-          <h2>Service status by journey</h2>
-          <p className="chart-caption">Distinct train journeys grouped by source status</p>
-          <ResponsiveContainer width="100%" height={280}>
+          <h2>Arrival delay bands</h2>
+          <p className="chart-caption">Stop-level observations grouped by lateness; missing delays are excluded</p>
+          <ResponsiveContainer width="100%" height={320}>
+            <BarChart data={data.delay_distribution}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="label" />
+              <YAxis />
+              <Tooltip formatter={(value, _name, item) => [
+                `${Number(value).toLocaleString()} stops (${number(item.payload.percentage)}%)`,
+                'Arrival observations',
+              ]} />
+              <Bar dataKey="count" name="Stop records">
+                {data.delay_distribution.map((item) => (
+                  <Cell key={item.label} fill={DELAY_COLORS[item.label] ?? '#64748b'} />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+
+        <div className="panel chart-panel">
+          <h2>Journey service status</h2>
+          <p className="chart-caption">Distinct train journeys by source status</p>
+          <ResponsiveContainer width="100%" height={320}>
             <PieChart>
-              <Pie data={data.statuses} dataKey="count" nameKey="label" outerRadius={95} label>
+              <Pie data={data.statuses} dataKey="count" nameKey="label" outerRadius={105} label>
                 {data.statuses.map((item, index) => (
-                  <Cell key={item.label} fill={['#22c55e', '#f59e0b', '#ef4444', '#3b82f6', '#a78bfa'][index % 5]} />
+                  <Cell key={item.label} fill={STATUS_COLORS[index % STATUS_COLORS.length]} />
                 ))}
               </Pie>
               <Tooltip formatter={(value) => [Number(value).toLocaleString(), 'Journeys']} />
+              <Legend />
             </PieChart>
           </ResponsiveContainer>
         </div>
 
         <div className="panel chart-panel chart-panel-wide">
           <h2>Arrival delay by stop sequence</h2>
-          <p className="chart-caption">Average recorded arrival delay at each stop number across all journeys</p>
+          <p className="chart-caption">Mean recorded stop arrival delay across the one-year period</p>
           <ResponsiveContainer width="100%" height={320}>
             <LineChart data={data.sequence} margin={{ top: 12, right: 24, bottom: 8, left: 8 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="label" label={{ value: 'Stop sequence', position: 'insideBottom', offset: -4 }} />
               <YAxis unit=" min" />
-              <Tooltip formatter={(value) => [`${value ?? 'N/A'} min`, 'Average arrival delay']} />
+              <Tooltip formatter={(value) => [`${number(Number(value))} min`, 'Arrival delay']} />
               <Line type="monotone" dataKey="value" name="Arrival delay" stroke="#38bdf8" strokeWidth={3} dot={false} />
             </LineChart>
           </ResponsiveContainer>
@@ -209,35 +238,45 @@ export default function App() {
 
       <section className="list-grid">
         <div className="panel">
-          <h2>Service status (journeys)</h2>
+          <h2>Meaningful insights</h2>
           <ul>
-            {data.statuses.map((item) => (
-              <li key={item.label}>
-                <span>{item.label}</span><strong>{item.count?.toLocaleString()}</strong>
-              </li>
+            {data.insights.map((item) => (
+              <li key={item.title}><span>{item.title}<small>{item.detail}</small></span><strong>{item.value}</strong></li>
             ))}
           </ul>
         </div>
 
         <div className="panel">
-          <h2>Routes with highest average delay</h2>
+          <h2>Project Q&amp;A</h2>
+          <ul>
+            <li><span>Which train has the highest average arrival delay?<small>Only trains with at least 10 journeys are ranked.</small></span><strong>{data.trains[0]?.label ?? 'N/A'} · {number(data.trains[0]?.value)} min</strong></li>
+            <li><span>Which station has the highest arrival delay?<small>Stations need at least 100 recorded arrivals.</small></span><strong>{data.stations[0]?.label ?? 'N/A'} · {number(data.stations[0]?.value)} min</strong></li>
+            <li><span>Which month had the highest average delay?<small>Arrival delay averaged per journey.</small></span><strong>{data.insights.find((item) => item.title === 'Highest-delay month')?.value ?? 'N/A'}</strong></li>
+            <li><span>What share of arrivals were over one hour late?<small>Calculated from non-missing stop arrival delays.</small></span><strong>{number(data.kpis.severe_arrival_pct)}%</strong></li>
+            <li><span>What is the date range analyzed?<small>Historical config selected for this analysis.</small></span><strong>{data.totals.start_date} – {data.totals.end_date}</strong></li>
+          </ul>
+        </div>
+
+        <div className="panel">
+          <h2>Data quality &amp; coverage</h2>
+          <ul>
+            <li><span>Source rows retained</span><strong>{Number(data.quality.retained_rows ?? data.totals.records).toLocaleString()}</strong></li>
+            <li><span>Rows missing train number</span><strong>{Number(data.quality.missing_train_number ?? 0).toLocaleString()}</strong></li>
+            <li><span>Rows missing station code</span><strong>{Number(data.quality.missing_station_code ?? 0).toLocaleString()}</strong></li>
+            <li><span>Negative arrival delay observations</span><strong>{Number(data.quality.negative_arrival_delays ?? 0).toLocaleString()}</strong></li>
+            <li><span>Reported arrival coverage</span><strong>{number(data.coverage.arrival_reported_pct)}%</strong></li>
+            <li><span>Reported departure coverage</span><strong>{number(data.coverage.departure_reported_pct)}%</strong></li>
+          </ul>
+          <p className="chart-caption">Quality anomalies are reported, not automatically discarded.</p>
+        </div>
+
+        <div className="panel">
+          <h2>Most delayed recurring routes</h2>
+          <p className="chart-caption">At least 20 matching journeys; journey averages weighted equally</p>
           <ul>
             {data.routes.map((item) => (
-              <li key={item.label}>
-                <span>{item.label} · {item.count} journeys</span>
-                <strong>{item.value ?? 'N/A'} min</strong>
-              </li>
+              <li key={item.label}><span>{item.label}<small>{item.count?.toLocaleString()} journeys</small></span><strong>{number(item.value)} min</strong></li>
             ))}
-          </ul>
-        </div>
-
-        <div className="panel">
-          <h2>Reporting coverage</h2>
-          <ul>
-            <li><span>Reported arrivals</span><strong>{data.coverage.arrival_reported_pct ?? 0}%</strong></li>
-            <li><span>Estimated arrivals</span><strong>{data.coverage.estimated ?? 0}%</strong></li>
-            <li><span>Reported departures</span><strong>{data.coverage.departure_reported_pct ?? 0}%</strong></li>
-            <li><span>Run quality avg</span><strong>{data.coverage.run_quality_avg ?? 0}</strong></li>
           </ul>
         </div>
       </section>
